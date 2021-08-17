@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/wing_com.png</file>
+        <file>images/settings.png</file>
+        <file>images/help.png</file>
+    </qresource>
+</RCC>
