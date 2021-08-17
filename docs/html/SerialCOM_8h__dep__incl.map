@@ -1,0 +1,5 @@
+<map id="SerialCOM.h" name="SerialCOM.h">
+<area shape="rect" id="node1" title="This is header of SerialCOM class." alt="" coords="53,5,150,32"/>
+<area shape="rect" id="node2" href="$main_8cpp.html" title="This is main class." alt="" coords="5,80,80,107"/>
+<area shape="rect" id="node3" href="$SerialCOM_8cpp.html" title="This is SerialCOM main UI class. It is handling Serial Port and its data flow." alt="" coords="105,80,215,107"/>
+</map>

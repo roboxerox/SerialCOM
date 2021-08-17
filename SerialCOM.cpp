@@ -1,6 +1,17 @@
+/**
+* @file SerialCOM.cpp
+* @author Anil Kumar
+* @date 15May2021
+* @brief This is SerialCOM main UI class.
+* It is handling Serial Port and its data flow.
+*/
 #include "SerialCOM.h"
 #include "ui_SerialCOM.h"
 
+/**
+ * @brief SerialCOM::SerialCOM
+ * @param parent
+ */
 SerialCOM::SerialCOM(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::SerialCOM)
@@ -23,11 +34,19 @@ SerialCOM::SerialCOM(QWidget *parent) :
     ui->comboBox_PortList->setEditable(true);
 }
 
+/**
+ * @brief SerialCOM::~SerialCOM
+ */
 SerialCOM::~SerialCOM()
 {
     delete ui;
 }
 
+/**
+ * @brief SerialCOM::m_Get_uiDataBits
+ * This method get Data Bits as per selected comboBox_DataBits
+ * @return
+ */
 QSerialPort::DataBits SerialCOM::m_Get_uiDataBits()
 {
     QSerialPort::DataBits dBits;
@@ -54,6 +73,11 @@ QSerialPort::DataBits SerialCOM::m_Get_uiDataBits()
     return dBits;
 }
 
+/**
+ * @brief SerialCOM::m_Get_uiParity
+ * This method get Parity as per selected comboBox_Parity
+ * @return
+ */
 QSerialPort::Parity SerialCOM::m_Get_uiParity()
 {
     QSerialPort::Parity parity;
@@ -83,6 +107,11 @@ QSerialPort::Parity SerialCOM::m_Get_uiParity()
     return parity;
 }
 
+/**
+ * @brief SerialCOM::m_Get_uiStopBits
+ * This method get Stop Bits as per selected comboBox_StopBits
+ * @return
+ */
 QSerialPort::StopBits SerialCOM::m_Get_uiStopBits()
 {
     QSerialPort::StopBits sBits;
@@ -106,6 +135,11 @@ QSerialPort::StopBits SerialCOM::m_Get_uiStopBits()
     return sBits;
 }
 
+/**
+ * @brief SerialCOM::m_Get_uiFlowControl
+ * This method get Flow control as per selected comboBox_FlowControl
+ * @return
+ */
 QSerialPort::FlowControl SerialCOM::m_Get_uiFlowControl()
 {
     QSerialPort::FlowControl flowCtrl;
@@ -129,6 +163,11 @@ QSerialPort::FlowControl SerialCOM::m_Get_uiFlowControl()
     return flowCtrl;
 }
 
+/**
+ * @brief SerialCOM::m_Get_uiOpenMode
+ * This method get Open Mode as per selected comboBox_OpenMode
+ * @return
+ */
 QSerialPort::OpenModeFlag SerialCOM::m_Get_uiOpenMode()
 {
     QSerialPort::OpenModeFlag OpenMode;
@@ -152,6 +191,10 @@ QSerialPort::OpenModeFlag SerialCOM::m_Get_uiOpenMode()
     return OpenMode;
 }
 
+/**
+ * @brief SerialCOM::on_pushButton_Send_clicked
+ * This is slot of Send button
+ */
 void SerialCOM::on_pushButton_Send_clicked()
 {
     if(SerialPort_SEND->write(ui->lineEdit->text().toLocal8Bit())!=-1)
@@ -171,6 +214,10 @@ void SerialCOM::on_pushButton_Send_clicked()
         qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<"NOT write"<<SerialPort_SEND->errorString();
 }
 
+/**
+ * @brief SerialCOM::sl_ReadData
+ * This is slot to read RX data when data is available.
+ */
 void SerialCOM::sl_ReadData()
 {
     QByteArray data = SerialPort_SEND->readAll();
@@ -188,7 +235,10 @@ void SerialCOM::sl_ReadData()
     }
 }
 
-
+/**
+ * @brief SerialCOM::on_pushButton_Open_clicked
+ * This is slot of Open button
+ */
 void SerialCOM::on_pushButton_Open_clicked()
 {
     strPortName     = ui->comboBox_PortList->currentText();
@@ -213,6 +263,10 @@ void SerialCOM::on_pushButton_Open_clicked()
     }
 }
 
+/**
+ * @brief SerialCOM::sl_Connect
+ * This is slot of timerHealth, to check and reconnect at 10 seconds interval
+ */
 void SerialCOM::sl_Connect()
 {
     if(!SerialPort_SEND->isOpen())
@@ -242,7 +296,11 @@ void SerialCOM::sl_Connect()
     }
 }
 
-
+/**
+ * @brief SerialCOM::sl_ReadOutputError
+ * This slot handle Serial port error
+ * @param e
+ */
 void SerialCOM::sl_ReadOutputError(QSerialPort::SerialPortError e)
 {
     QString error = SerialPort_SEND->portName()+" ";
@@ -328,11 +386,20 @@ void SerialCOM::sl_ReadOutputError(QSerialPort::SerialPortError e)
     }
 }
 
+/**
+ * @brief SerialCOM::on_pushButton_Clear_clicked
+ * this is slot to clear plainTextEdit area.
+ */
 void SerialCOM::on_pushButton_Clear_clicked()
 {
     ui->plainTextEdit->clear();
 }
 
+/**
+ * @brief SerialCOM::sl_AboutUs
+ * This is slot to gives details of app.
+ * @param ab
+ */
 void SerialCOM::sl_AboutUs(bool ab)
 {
     Q_UNUSED(ab)

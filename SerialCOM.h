@@ -1,3 +1,9 @@
+/**
+* @file SerialCOM.h
+* @author Anil Kumar
+* @date 15May2021
+* @brief This is header of SerialCOM class.
+*/
 #ifndef SERIALCOM_H
 #define SERIALCOM_H
 
@@ -8,6 +14,13 @@
 #include <QDateTime>
 #include <QSerialPortInfo>
 #include <QMessageBox>
+
+#define VER_MAJOR               QString("0")
+#define VER_MINOR               QString("1")
+#define VER_BUILD               QString("2a")
+#define STR_PRODUCTNAME         QString("SerialCOM")
+#define STR_SOFTWARE_VERSION    QString(VER_MAJOR+"."+VER_MINOR+"."+VER_BUILD)
+#define STR_FILEDESCRIPTION     QString("Serial port communication")
 
 namespace Ui {
 class SerialCOM;
@@ -24,16 +37,16 @@ class SerialCOM : public QMainWindow
 public:
     explicit SerialCOM(QWidget *parent = 0);
     ~SerialCOM();
-    QSerialPort * SerialPort_SEND;
-    QTimer *timerHealth;
-    QString strPortName;
-    qint32 iBaudrate = QSerialPort::Baud9600;
-    QSerialPort::DataBits iDataBits = QSerialPort::Data8;
-    QSerialPort::Parity iParity = QSerialPort::NoParity;
-    QSerialPort::StopBits iStopBits = QSerialPort::OneStop;
-    QSerialPort::FlowControl iFlowControl = QSerialPort::NoFlowControl;
-    QSerialPort::OpenModeFlag iOpenMode = QSerialPort::ReadWrite;
-    bool isSerialPortOpen = false;
+    QSerialPort * SerialPort_SEND;/**< Object of QSerialPort **/
+    QTimer *timerHealth;/**< Object of QTimer **/
+    QString strPortName;/**< QString Object for Serial Port Name **/
+    qint32 iBaudrate = QSerialPort::Baud9600; /**< qint32 Object for Serial Port BaudRate **/
+    QSerialPort::DataBits iDataBits = QSerialPort::Data8; /**< Object for Serial Port Data Bits **/
+    QSerialPort::Parity iParity = QSerialPort::NoParity; /**< Object for Serial Port Parity **/
+    QSerialPort::StopBits iStopBits = QSerialPort::OneStop; /**< Object for Serial Port Stop Bits **/
+    QSerialPort::FlowControl iFlowControl = QSerialPort::NoFlowControl; /**< Object for Serial Port Flow Control **/
+    QSerialPort::OpenModeFlag iOpenMode = QSerialPort::ReadWrite; /**< Object for Serial Port Open Mode **/
+    bool isSerialPortOpen = false; /**< boolean Object for serial port open or not **/
 public slots:
 private slots:
     void sl_ReadData();
