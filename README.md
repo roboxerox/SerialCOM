@@ -5,13 +5,13 @@ Qt based UI application to send or receive data over serial port on platform Uni
 ## Use the following commands to install the basic requirements for building Qt applications
 
 ## Debian/Ubuntu (apt-get)
-	`$ sudo apt-get install build-essential libgl1-mesa-dev`
-	For More Help [https://wiki.qt.io/Install_Qt_5_on_Ubuntu]
+	sudo apt-get install build-essential libgl1-mesa-dev
+For More Help [https://wiki.qt.io/Install_Qt_5_on_Ubuntu]
 ## Fedora/RHEL/CentOS (yum)
-	`$ sudo yum groupinstall "C Development Tools and Libraries"`
-	`$ sudo yum install mesa-libGL-devel`
+	sudo yum groupinstall "C Development Tools and Libraries"
+	sudo yum install mesa-libGL-devel
 ## openSUSE (zypper)
-	`$ sudo zypper install -t pattern devel_basis`
+	sudo zypper install -t pattern devel_basis
 
 
 ## Step to compile
