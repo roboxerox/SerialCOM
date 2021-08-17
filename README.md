@@ -2,15 +2,15 @@
 Qt based UI application to send or receive data over serial port on platform Unix/Linux.
 
 
-##Use the following commands to install the basic requirements for building Qt applications
+## Use the following commands to install the basic requirements for building Qt applications
 
-##Debian/Ubuntu (apt-get)
+## Debian/Ubuntu (apt-get)
 	`$ sudo apt-get install build-essential libgl1-mesa-dev`
 	For More Help [https://wiki.qt.io/Install_Qt_5_on_Ubuntu]
-##Fedora/RHEL/CentOS (yum)
+## Fedora/RHEL/CentOS (yum)
 	`$ sudo yum groupinstall "C Development Tools and Libraries"`
 	`$ sudo yum install mesa-libGL-devel`
-##openSUSE (zypper)
+## openSUSE (zypper)
 	`$ sudo zypper install -t pattern devel_basis`
 
 
@@ -26,7 +26,7 @@ Qt based UI application to send or receive data over serial port on platform Uni
 
 
 
-#License
+# License
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
