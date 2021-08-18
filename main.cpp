@@ -18,7 +18,7 @@
 int main(int argc, char *argv[])
 {
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
-    QCoreApplication app(argc, argv);
+    QApplication app(argc, argv);
     app.setApplicationName(STR_PRODUCTNAME);
     app.setApplicationVersion(STR_SOFTWARE_VERSION);
     QCommandLineParser parser;
