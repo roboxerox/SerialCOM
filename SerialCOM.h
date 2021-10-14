@@ -14,6 +14,7 @@
 #include <QDateTime>
 #include <QSerialPortInfo>
 #include <QMessageBox>
+#include <QFileDialog>
 
 #define VER_MAJOR               QString("0")
 #define VER_MINOR               QString("1")
@@ -56,6 +57,10 @@ private slots:
     void on_pushButton_Send_clicked();
     void on_pushButton_Clear_clicked();
     void sl_AboutUs(bool ab);
+    void on_pushButton_Save_clicked();
+    void sl_Close(bool cl);
+protected:
+    virtual bool eventFilter(QObject * watched, QEvent * event);
 private:
     Ui::SerialCOM *ui;
 };

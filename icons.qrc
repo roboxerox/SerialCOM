@@ -3,5 +3,7 @@
         <file>images/wing_com.png</file>
         <file>images/settings.png</file>
         <file>images/help.png</file>
+        <file>images/down-arrow.png</file>
+        <file>images/expand-arrow.png</file>
     </qresource>
 </RCC>

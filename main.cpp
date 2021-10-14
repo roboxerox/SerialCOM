@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
 
     SerialCOM w;
     w.show();
+//    w.showFullScreen();
 
     return app.exec();
 }

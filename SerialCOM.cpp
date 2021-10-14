@@ -21,6 +21,7 @@ SerialCOM::SerialCOM(QWidget *parent) :
     connect(SerialPort_SEND,SIGNAL(readyRead()),this,SLOT(sl_ReadData()));
     connect(SerialPort_SEND, SIGNAL(error(QSerialPort::SerialPortError)),this,SLOT(sl_ReadOutputError(QSerialPort::SerialPortError)));
     connect(ui->actionAbout_Us,SIGNAL(triggered(bool)),this,SLOT(sl_AboutUs(bool)));
+    connect(ui->actionExit,SIGNAL(triggered(bool)),this,SLOT(sl_Close(bool)));
 
     ui->stackedWidget->setCurrentIndex(0);
 
@@ -32,6 +33,10 @@ SerialCOM::SerialCOM(QWidget *parent) :
         ui->comboBox_PortList->addItem("/dev/"+portInfo.portName());
 
     ui->comboBox_PortList->setEditable(true);
+
+    ui->comboBox_PortList->findChild<QLineEdit*>()->setStyleSheet("QLineEdit "
+                                                                  "{background-color: rgb(119,136,153); color: rgb(240, 255, 255);}");
+    ui->lineEdit->installEventFilter(this);
 }
 
 /**
@@ -40,6 +45,21 @@ SerialCOM::SerialCOM(QWidget *parent) :
 SerialCOM::~SerialCOM()
 {
     delete ui;
+}
+
+bool SerialCOM::eventFilter(QObject *watched, QEvent *event)
+{
+    if(ui->lineEdit->hasFocus())
+    {
+        QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
+//        keyEvent->modifiers();
+//        if(keyEvent->modifiers() == Qt::ControlModifier && keyEvent->key() == Qt::Key_D)
+//            qDebug()<<"Press Ctrl + D";
+        if(keyEvent->key()== Qt::Key_Enter)
+            qDebug()<<"Entered";
+    }
+
+    return QObject::eventFilter(watched, event);
 }
 
 /**
@@ -206,6 +226,7 @@ void SerialCOM::on_pushButton_Send_clicked()
         {
             QByteArray tmp; tmp.append(ui->lineEdit->text());
             QByteArray hex = tmp.toHex(' ');
+//            QByteArray hex = tmp.toHex(); // ICNEXUS
             ui->plainTextEdit->appendHtml(QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")+
                                           "<font color=\"blue\"> SEND : "+QString::fromStdString(hex.toStdString())+"</font>");
         }
@@ -229,6 +250,7 @@ void SerialCOM::sl_ReadData()
         else
         {
             QByteArray hex = data.toHex(' ');
+//            QByteArray hex = data.toHex();  // ICNEXUS
             ui->plainTextEdit->appendHtml(QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")+
                                           "<font color=\"green\"> RECV : "+QString::fromStdString(hex.toStdString())+"</font>");
         }
@@ -260,7 +282,11 @@ void SerialCOM::on_pushButton_Open_clicked()
         SerialPort_SEND->close();
         ui->pushButton_Open->setText("Open");
         isSerialPortOpen = false;
+        ui->statusBar->showMessage(strPortName+" Closed at "+QString::number(iBaudrate));
     }
+
+    if(!SerialPort_SEND->isOpen())
+        QMessageBox::information(this,"Serial port",strPortName+" is closed. !!");
 }
 
 /**
@@ -405,4 +431,49 @@ void SerialCOM::sl_AboutUs(bool ab)
     Q_UNUSED(ab)
     QMessageBox::about(this,"About Us","SerialCOM\nVersion 0.1.1a\n\n"
                                              "The program is provided AS IS with NO WARRANTY OF ANY KIND.");
+}
+
+/**
+ * @brief SerialCOM::on_pushButton_Save_clicked
+ * This is slot to save all log data into a file.
+ */
+void SerialCOM::on_pushButton_Save_clicked()
+{
+    if(ui->plainTextEdit->toPlainText().size()<=0)
+    {
+        QMessageBox::warning(this,"Copy","No data available. !!");
+        return;
+    }
+
+
+    const QStringList filters({
+                                  "Thingy (*.thi)",
+                                  "Dingy (*.dni)"
+                              });
+    QFileDialog fileDialog(this);
+    fileDialog.setAcceptMode(QFileDialog::AcceptSave);
+    fileDialog.setNameFilters(filters);
+    fileDialog.exec();
+
+    QString fnameName = fileDialog.selectedFiles().first();
+
+//    QFileDialog fileDlog;
+//    QString filter = "Worksheet Files (*.abd);;log files (*.log)";
+//    fileDlog.setDefaultSuffix("log");
+//    QString fnameName = fileDlog.getSaveFileName(this, tr("Save Worksheet"), ".", filter, &filter);
+
+    qDebug()<<fileDialog.selectedNameFilter() <<fileDialog.selectedMimeTypeFilter();
+    //    QString fnameName = QFileDialog::getSaveFileName(this, "test sav e name", ".", "log files (*.log);;Text files (*.txt)" );
+    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << fnameName;
+    QFile file(fnameName);
+    file.open(QIODevice::WriteOnly);
+    QTextStream wrt(&file);
+    wrt<<ui->plainTextEdit->toPlainText()<<endl;
+    file.close();
+
+}
+
+void SerialCOM::sl_Close(bool cl)
+{
+    close();
 }
