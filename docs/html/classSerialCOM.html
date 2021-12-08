@@ -67,6 +67,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pri-slots">Private Slots</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
@@ -111,6 +112,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a181bd4bdcfa3be8fe9a23d2439c264bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac22c37fea3236204b3f3dfa16fc959c5"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialCOM.html#ac22c37fea3236204b3f3dfa16fc959c5">timerHealth</a></td></tr>
 <tr class="separator:ac22c37fea3236204b3f3dfa16fc959c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeab54033fbf8b4e8c328d631926d3eab"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialCOM.html#aeab54033fbf8b4e8c328d631926d3eab">timerSerialPortList</a></td></tr>
+<tr class="separator:aeab54033fbf8b4e8c328d631926d3eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0c3dd0bf1feeaec1b60fcd64cb38552"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialCOM.html#aa0c3dd0bf1feeaec1b60fcd64cb38552">strPortName</a></td></tr>
 <tr class="separator:aa0c3dd0bf1feeaec1b60fcd64cb38552"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08af2383c3d071bcfbc7d8a4a636b140"><td class="memItemLeft" align="right" valign="top">qint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialCOM.html#a08af2383c3d071bcfbc7d8a4a636b140">iBaudrate</a> = QSerialPort::Baud9600</td></tr>
@@ -128,8 +131,17 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:ab3ce9e0944c59c14f35f6df55f675291"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialCOM.html#ab3ce9e0944c59c14f35f6df55f675291">isSerialPortOpen</a> = false</td></tr>
 <tr class="separator:ab3ce9e0944c59c14f35f6df55f675291"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a9cda67cd8fedbb2aaa4418c51fe5de19"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialCOM.html#a9cda67cd8fedbb2aaa4418c51fe5de19">eventFilter</a> (QObject *watched, QEvent *event)</td></tr>
+<tr class="memdesc:a9cda67cd8fedbb2aaa4418c51fe5de19"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classSerialCOM.html#a9cda67cd8fedbb2aaa4418c51fe5de19" title="SerialCOM::eventFilter.">SerialCOM::eventFilter</a>.  <a href="classSerialCOM.html#a9cda67cd8fedbb2aaa4418c51fe5de19">More...</a><br /></td></tr>
+<tr class="separator:a9cda67cd8fedbb2aaa4418c51fe5de19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-slots"></a>
 Private Slots</h2></td></tr>
+<tr class="memitem:aed7e8904a78eec678e7e8c69be1870a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialCOM.html#aed7e8904a78eec678e7e8c69be1870a4">sl_UpdateSerialPortList</a> ()</td></tr>
+<tr class="memdesc:aed7e8904a78eec678e7e8c69be1870a4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classSerialCOM.html#aed7e8904a78eec678e7e8c69be1870a4" title="SerialCOM::sl_UpdateSerialPortList This slot fetch system plugged serial port on every 10sec by timer...">SerialCOM::sl_UpdateSerialPortList</a> This slot fetch system plugged serial port on every 10sec by timerSerialPortList and update port name in combo box of ui.  <a href="classSerialCOM.html#aed7e8904a78eec678e7e8c69be1870a4">More...</a><br /></td></tr>
+<tr class="separator:aed7e8904a78eec678e7e8c69be1870a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3181327165f18372061220ac6732dbe7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialCOM.html#a3181327165f18372061220ac6732dbe7">sl_ReadData</a> ()</td></tr>
 <tr class="memdesc:a3181327165f18372061220ac6732dbe7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classSerialCOM.html#a3181327165f18372061220ac6732dbe7" title="SerialCOM::sl_ReadData This is slot to read RX data when data is available.">SerialCOM::sl_ReadData</a> This is slot to read RX data when data is available.  <a href="classSerialCOM.html#a3181327165f18372061220ac6732dbe7">More...</a><br /></td></tr>
 <tr class="separator:a3181327165f18372061220ac6732dbe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,6 +163,12 @@ Private Slots</h2></td></tr>
 <tr class="memitem:ac18b3baded01ddc5a066bdf51898244f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialCOM.html#ac18b3baded01ddc5a066bdf51898244f">sl_AboutUs</a> (bool ab)</td></tr>
 <tr class="memdesc:ac18b3baded01ddc5a066bdf51898244f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classSerialCOM.html#ac18b3baded01ddc5a066bdf51898244f" title="SerialCOM::sl_AboutUs This is slot to gives details of app.">SerialCOM::sl_AboutUs</a> This is slot to gives details of app.  <a href="classSerialCOM.html#ac18b3baded01ddc5a066bdf51898244f">More...</a><br /></td></tr>
 <tr class="separator:ac18b3baded01ddc5a066bdf51898244f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af141e2a72c6c048f104059a8c4fbaf4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialCOM.html#af141e2a72c6c048f104059a8c4fbaf4c">on_pushButton_Save_clicked</a> ()</td></tr>
+<tr class="memdesc:af141e2a72c6c048f104059a8c4fbaf4c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classSerialCOM.html#af141e2a72c6c048f104059a8c4fbaf4c" title="SerialCOM::on_pushButton_Save_clicked This is slot to save all log data into a file.">SerialCOM::on_pushButton_Save_clicked</a> This is slot to save all log data into a file.  <a href="classSerialCOM.html#af141e2a72c6c048f104059a8c4fbaf4c">More...</a><br /></td></tr>
+<tr class="separator:af141e2a72c6c048f104059a8c4fbaf4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74b5f736b595eefda24f61b48cf501e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialCOM.html#a74b5f736b595eefda24f61b48cf501e2">sl_Close</a> (bool cl)</td></tr>
+<tr class="memdesc:a74b5f736b595eefda24f61b48cf501e2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classSerialCOM.html#a74b5f736b595eefda24f61b48cf501e2" title="SerialCOM::sl_Close.">SerialCOM::sl_Close</a>.  <a href="classSerialCOM.html#a74b5f736b595eefda24f61b48cf501e2">More...</a><br /></td></tr>
+<tr class="separator:a74b5f736b595eefda24f61b48cf501e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -174,6 +192,8 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a5ceb16ffdc84e3c602053e444adb8ab0"><td class="memItemLeft" align="right" valign="top">Ui::SerialCOM *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialCOM.html#a5ceb16ffdc84e3c602053e444adb8ab0">ui</a></td></tr>
 <tr class="separator:a5ceb16ffdc84e3c602053e444adb8ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a169398a26fc791df281e202a2884529b"><td class="memItemLeft" align="right" valign="top">QList&lt; QSerialPortInfo &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialCOM.html#a169398a26fc791df281e202a2884529b">sPortList</a></td></tr>
+<tr class="separator:a169398a26fc791df281e202a2884529b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a86353777ce5a85c1c16ffb93283eb83c"></a>
@@ -230,6 +250,52 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9cda67cd8fedbb2aaa4418c51fe5de19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cda67cd8fedbb2aaa4418c51fe5de19">&#9670;&nbsp;</a></span>eventFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SerialCOM::eventFilter </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QEvent *&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classSerialCOM.html#a9cda67cd8fedbb2aaa4418c51fe5de19" title="SerialCOM::eventFilter.">SerialCOM::eventFilter</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">watched</td><td></td></tr>
+    <tr><td class="paramname">event</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="a0a3d3e1ec9f134a508fe31336a70addc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a3d3e1ec9f134a508fe31336a70addc">&#9670;&nbsp;</a></span>m_Get_uiDataBits()</h2>
 
@@ -424,6 +490,33 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="af141e2a72c6c048f104059a8c4fbaf4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af141e2a72c6c048f104059a8c4fbaf4c">&#9670;&nbsp;</a></span>on_pushButton_Save_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SerialCOM::on_pushButton_Save_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classSerialCOM.html#af141e2a72c6c048f104059a8c4fbaf4c" title="SerialCOM::on_pushButton_Save_clicked This is slot to save all log data into a file.">SerialCOM::on_pushButton_Save_clicked</a> This is slot to save all log data into a file. </p>
+
+</div>
+</div>
 <a id="ab35da851cf64923aebbcd3b956770f25"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab35da851cf64923aebbcd3b956770f25">&#9670;&nbsp;</a></span>on_pushButton_Send_clicked</h2>
 
@@ -479,6 +572,40 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ab</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a74b5f736b595eefda24f61b48cf501e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74b5f736b595eefda24f61b48cf501e2">&#9670;&nbsp;</a></span>sl_Close</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SerialCOM::sl_Close </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>cl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classSerialCOM.html#a74b5f736b595eefda24f61b48cf501e2" title="SerialCOM::sl_Close.">SerialCOM::sl_Close</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cl</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -566,10 +693,37 @@ Private Attributes</h2></td></tr>
 <p><a class="el" href="classSerialCOM.html#a5263a35ceeaaba00aee74c7ce3f6dc1b" title="SerialCOM::sl_ReadOutputError This slot handle Serial port error.">SerialCOM::sl_ReadOutputError</a> This slot handle Serial port error. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">e</td><td></td></tr>
+    <tr><td class="paramname">e</td><td>type of serial port error </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aed7e8904a78eec678e7e8c69be1870a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed7e8904a78eec678e7e8c69be1870a4">&#9670;&nbsp;</a></span>sl_UpdateSerialPortList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SerialCOM::sl_UpdateSerialPortList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classSerialCOM.html#aed7e8904a78eec678e7e8c69be1870a4" title="SerialCOM::sl_UpdateSerialPortList This slot fetch system plugged serial port on every 10sec by timer...">SerialCOM::sl_UpdateSerialPortList</a> This slot fetch system plugged serial port on every 10sec by timerSerialPortList and update port name in combo box of ui. </p>
 
 </div>
 </div>
@@ -694,6 +848,28 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a169398a26fc791df281e202a2884529b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a169398a26fc791df281e202a2884529b">&#9670;&nbsp;</a></span>sPortList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QSerialPortInfo&gt; SerialCOM::sPortList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aa0c3dd0bf1feeaec1b60fcd64cb38552"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa0c3dd0bf1feeaec1b60fcd64cb38552">&#9670;&nbsp;</a></span>strPortName</h2>
 
@@ -717,6 +893,21 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">QTimer* SerialCOM::timerHealth</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Object of QTimer </p>
+
+</div>
+</div>
+<a id="aeab54033fbf8b4e8c328d631926d3eab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeab54033fbf8b4e8c328d631926d3eab">&#9670;&nbsp;</a></span>timerSerialPortList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer* SerialCOM::timerSerialPortList</td>
         </tr>
       </table>
 </div><div class="memdoc">

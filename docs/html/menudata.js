@@ -32,7 +32,15 @@ var menudata={children:[
 {text:"Class Index",url:"classes.html"},
 {text:"Class Hierarchy",url:"inherits.html"},
 {text:"Class Members",url:"functions.html",children:[
-{text:"All",url:"functions.html"},
+{text:"All",url:"functions.html",children:[
+{text:"e",url:"functions.html#index_e"},
+{text:"i",url:"functions.html#index_i"},
+{text:"m",url:"functions.html#index_m"},
+{text:"o",url:"functions.html#index_o"},
+{text:"s",url:"functions.html#index_s"},
+{text:"t",url:"functions.html#index_t"},
+{text:"u",url:"functions.html#index_u"},
+{text:"~",url:"functions.html#index__7E"}]},
 {text:"Functions",url:"functions_func.html"},
 {text:"Variables",url:"functions_vars.html"}]}]},
 {text:"Files",url:"files.html",children:[

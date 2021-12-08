@@ -28,15 +28,23 @@ SerialCOM::SerialCOM(QWidget *parent) :
     timerHealth = new QTimer;
     connect(timerHealth,SIGNAL(timeout()),this, SLOT(sl_Connect()));
 
-    QList<QSerialPortInfo> List = QSerialPortInfo::availablePorts();
-    foreach (QSerialPortInfo portInfo , List)
-        ui->comboBox_PortList->addItem("/dev/"+portInfo.portName());
+    timerSerialPortList = new QTimer;
+    connect(timerSerialPortList,SIGNAL(timeout()),this, SLOT(sl_UpdateSerialPortList()));
 
     ui->comboBox_PortList->setEditable(true);
-
+    ui->comboBox_PortList->view()->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     ui->comboBox_PortList->findChild<QLineEdit*>()->setStyleSheet("QLineEdit "
                                                                   "{background-color: rgb(119,136,153); color: rgb(240, 255, 255);}");
     ui->lineEdit->installEventFilter(this);
+
+    ui->comboBox_BaudRate->view()->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    ui->comboBox_DataBits->view()->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    ui->comboBox_FlowControl->view()->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    ui->comboBox_OpenMode->view()->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    ui->comboBox_Parity->view()->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    ui->comboBox_StopBits->view()->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+
+    timerSerialPortList->start(10000);
 }
 
 /**
@@ -47,19 +55,49 @@ SerialCOM::~SerialCOM()
     delete ui;
 }
 
-bool SerialCOM::eventFilter(QObject *watched, QEvent *event)
+/**
+ * @brief SerialCOM::eventFilter
+ * @param watched
+ * @param event
+ * @return
+ */
+bool SerialCOM::eventFilter(QObject *obj, QEvent *event)
 {
-    if(ui->lineEdit->hasFocus())
-    {
-        QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
-//        keyEvent->modifiers();
-//        if(keyEvent->modifiers() == Qt::ControlModifier && keyEvent->key() == Qt::Key_D)
-//            qDebug()<<"Press Ctrl + D";
-        if(keyEvent->key()== Qt::Key_Enter)
-            qDebug()<<"Entered";
-    }
+//    if(ui->lineEdit->hasFocus())
+//    {
+//        QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
+//        int keyInt = keyEvent->key();
 
-    return QObject::eventFilter(watched, event);
+////        keyEvent->modifiers();
+////        if(keyEvent->modifiers() == Qt::ControlModifier && keyEvent->key() == Qt::Key_D)
+////            qDebug()<<"Press Ctrl + D";
+//        if((keyInt== Qt::Key_Enter || keyInt == Qt::Key_Return)&& ui->lineEdit->text().size()>0)
+//        {
+//            qDebug()<<"Pressed" <<QKeySequence(keyInt).toString(QKeySequence::NativeText)
+//                   <<keyEvent->text();
+//            return true;
+//        }
+//    }
+
+//    return QObject::eventFilter(watched, event);
+
+
+
+    QKeyEvent *KE = static_cast<QKeyEvent*>(event);
+    if (KE->key() == Qt::Key_Return || KE->key() == Qt::Key_Enter)
+    {
+        //qDebug() << "eventFilter" << obj;
+        if (obj == ui->lineEdit)
+        {
+            qDebug()<<"Pressed" <<QKeySequence(KE->key()).toString(QKeySequence::NativeText)
+                   <<KE->text();
+        }
+        else
+            return QObject::eventFilter(obj, event);
+
+        return true;  //return TRUE, stopping event propagation
+    }
+        return QObject::eventFilter(obj, event);
 }
 
 /**
@@ -236,6 +274,28 @@ void SerialCOM::on_pushButton_Send_clicked()
 }
 
 /**
+ * @brief SerialCOM::sl_UpdateSerialPortList
+ * This slot fetch system plugged serial port on every 10sec by timerSerialPortList
+ * and update port name in combo box of ui.
+ */
+void SerialCOM::sl_UpdateSerialPortList()
+{
+    if(isSerialPortOpen)
+        return;
+
+    QList<QSerialPortInfo> List = QSerialPortInfo::availablePorts();
+
+    if(sPortList.size() != List.size())
+    {
+        sPortList.clear();
+        sPortList = List;
+        ui->comboBox_PortList->clear();
+        foreach (QSerialPortInfo portInfo , sPortList)
+            ui->comboBox_PortList->addItem("/dev/"+portInfo.portName());
+    }
+}
+
+/**
  * @brief SerialCOM::sl_ReadData
  * This is slot to read RX data when data is available.
  */
@@ -325,7 +385,7 @@ void SerialCOM::sl_Connect()
 /**
  * @brief SerialCOM::sl_ReadOutputError
  * This slot handle Serial port error
- * @param e
+ * @param e type of serial port error
  */
 void SerialCOM::sl_ReadOutputError(QSerialPort::SerialPortError e)
 {
@@ -429,8 +489,17 @@ void SerialCOM::on_pushButton_Clear_clicked()
 void SerialCOM::sl_AboutUs(bool ab)
 {
     Q_UNUSED(ab)
-    QMessageBox::about(this,"About Us","SerialCOM\nVersion 0.1.1a\n\n"
-                                             "The program is provided AS IS with NO WARRANTY OF ANY KIND.");
+    QMessageBox *cAbout = new QMessageBox;
+    cAbout->setIconPixmap(QPixmap(":images/wing_com.png").scaled(QSize(60,40)));
+    cAbout->setStyleSheet("QMessageBox {"
+                         "color: rgb(255, 255, 255);"
+                         "background-color: rgb(215, 214, 255);"
+                         "background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(112,128,144, 255), stop:1 rgba(255, 255, 255, 255));"
+                     "}");
+    cAbout->setText("SerialCOM\nVersion 0.1.1a\n\n"
+                    "The program is provided AS IS with NO WARRANTY OF ANY KIND.");
+    cAbout->setStandardButtons(QMessageBox::Close);
+    cAbout->exec();
 }
 
 /**
@@ -473,7 +542,12 @@ void SerialCOM::on_pushButton_Save_clicked()
 
 }
 
+/**
+ * @brief SerialCOM::sl_Close
+ * @param cl
+ */
 void SerialCOM::sl_Close(bool cl)
 {
+    Q_UNUSED(cl)
     close();
 }

@@ -40,6 +40,7 @@ public:
     ~SerialCOM();
     QSerialPort * SerialPort_SEND;/**< Object of QSerialPort **/
     QTimer *timerHealth;/**< Object of QTimer **/
+    QTimer *timerSerialPortList;/**< Object of QTimer **/
     QString strPortName;/**< QString Object for Serial Port Name **/
     qint32 iBaudrate = QSerialPort::Baud9600; /**< qint32 Object for Serial Port BaudRate **/
     QSerialPort::DataBits iDataBits = QSerialPort::Data8; /**< Object for Serial Port Data Bits **/
@@ -50,6 +51,7 @@ public:
     bool isSerialPortOpen = false; /**< boolean Object for serial port open or not **/
 public slots:
 private slots:
+    void sl_UpdateSerialPortList();
     void sl_ReadData();
     void on_pushButton_Open_clicked();
     void sl_Connect();
@@ -63,6 +65,7 @@ protected:
     virtual bool eventFilter(QObject * watched, QEvent * event);
 private:
     Ui::SerialCOM *ui;
+    QList<QSerialPortInfo> sPortList;
 };
 
 #endif // SERIALCOM_H

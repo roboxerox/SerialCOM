@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['serialcom_52',['SerialCOM',['../classSerialCOM.html#a86353777ce5a85c1c16ffb93283eb83c',1,'SerialCOM']]],
-  ['sl_5faboutus_53',['sl_AboutUs',['../classSerialCOM.html#ac18b3baded01ddc5a066bdf51898244f',1,'SerialCOM']]],
-  ['sl_5fconnect_54',['sl_Connect',['../classSerialCOM.html#a47e7540f7ee14400df65d43ce807c5c3',1,'SerialCOM']]],
-  ['sl_5freaddata_55',['sl_ReadData',['../classSerialCOM.html#a3181327165f18372061220ac6732dbe7',1,'SerialCOM']]],
-  ['sl_5freadoutputerror_56',['sl_ReadOutputError',['../classSerialCOM.html#a5263a35ceeaaba00aee74c7ce3f6dc1b',1,'SerialCOM']]]
+  ['on_5fpushbutton_5fclear_5fclicked_56',['on_pushButton_Clear_clicked',['../classSerialCOM.html#a6675529794fdf7d71c9e7ffc8199d0d6',1,'SerialCOM']]],
+  ['on_5fpushbutton_5fopen_5fclicked_57',['on_pushButton_Open_clicked',['../classSerialCOM.html#a8156ca342f7f8ad3ceb3d4e7ed14bc11',1,'SerialCOM']]],
+  ['on_5fpushbutton_5fsave_5fclicked_58',['on_pushButton_Save_clicked',['../classSerialCOM.html#af141e2a72c6c048f104059a8c4fbaf4c',1,'SerialCOM']]],
+  ['on_5fpushbutton_5fsend_5fclicked_59',['on_pushButton_Send_clicked',['../classSerialCOM.html#ab35da851cf64923aebbcd3b956770f25',1,'SerialCOM']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['serialcom_37',['SerialCOM',['../classSerialCOM.html',1,'']]]
+  ['serialcom_43',['SerialCOM',['../classSerialCOM.html',1,'']]]
 ];

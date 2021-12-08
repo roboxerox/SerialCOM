@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['on_5fpushbutton_5fclear_5fclicked_14',['on_pushButton_Clear_clicked',['../classSerialCOM.html#a6675529794fdf7d71c9e7ffc8199d0d6',1,'SerialCOM']]],
-  ['on_5fpushbutton_5fopen_5fclicked_15',['on_pushButton_Open_clicked',['../classSerialCOM.html#a8156ca342f7f8ad3ceb3d4e7ed14bc11',1,'SerialCOM']]],
-  ['on_5fpushbutton_5fsend_5fclicked_16',['on_pushButton_Send_clicked',['../classSerialCOM.html#ab35da851cf64923aebbcd3b956770f25',1,'SerialCOM']]]
+  ['m_5fget_5fuidatabits_8',['m_Get_uiDataBits',['../classSerialCOM.html#a0a3d3e1ec9f134a508fe31336a70addc',1,'SerialCOM']]],
+  ['m_5fget_5fuiflowcontrol_9',['m_Get_uiFlowControl',['../classSerialCOM.html#a6ecc39fe104da9f3a15778830657b851',1,'SerialCOM']]],
+  ['m_5fget_5fuiopenmode_10',['m_Get_uiOpenMode',['../classSerialCOM.html#a0995c58ca6e2d1c09fb43ce9d214a74c',1,'SerialCOM']]],
+  ['m_5fget_5fuiparity_11',['m_Get_uiParity',['../classSerialCOM.html#a76f20b152bccc8c633453c1989419e77',1,'SerialCOM']]],
+  ['m_5fget_5fuistopbits_12',['m_Get_uiStopBits',['../classSerialCOM.html#a65751d7a8eb917fb7447b12cd52bd850',1,'SerialCOM']]],
+  ['main_13',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['main_2ecpp_14',['main.cpp',['../main_8cpp.html',1,'']]]
 ];

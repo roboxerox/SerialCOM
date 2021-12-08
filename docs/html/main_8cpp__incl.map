@@ -1,9 +1,9 @@
 <map id="main.cpp" name="main.cpp">
-<area shape="rect" id="node1" title="This is main class." alt="" coords="536,5,611,32"/>
-<area shape="rect" id="node2" href="$SerialCOM_8h.html" title="This is header of SerialCOM class." alt="" coords="329,80,426,107"/>
-<area shape="rect" id="node10" title=" " alt="" coords="451,80,547,107"/>
-<area shape="rect" id="node11" title=" " alt="" coords="571,80,725,107"/>
-<area shape="rect" id="node12" title=" " alt="" coords="749,80,845,107"/>
+<area shape="rect" id="node1" title="This is main class." alt="" coords="587,5,661,32"/>
+<area shape="rect" id="node2" href="$SerialCOM_8h.html" title="This is header of SerialCOM class." alt="" coords="379,80,477,107"/>
+<area shape="rect" id="node11" title=" " alt="" coords="501,80,597,107"/>
+<area shape="rect" id="node12" title=" " alt="" coords="621,80,776,107"/>
+<area shape="rect" id="node13" title=" " alt="" coords="800,80,896,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,155,112,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="137,155,226,181"/>
 <area shape="rect" id="node5" title=" " alt="" coords="250,155,321,181"/>
@@ -11,4 +11,5 @@
 <area shape="rect" id="node7" title=" " alt="" coords="434,155,523,181"/>
 <area shape="rect" id="node8" title=" " alt="" coords="547,155,658,181"/>
 <area shape="rect" id="node9" title=" " alt="" coords="682,155,790,181"/>
+<area shape="rect" id="node10" title=" " alt="" coords="815,155,905,181"/>
 </map>
