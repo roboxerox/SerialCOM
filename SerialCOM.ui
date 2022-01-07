@@ -40,633 +40,59 @@
      <pointsize>11</pointsize>
     </font>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
-     <number>2</number>
+     <number>3</number>
     </property>
     <property name="leftMargin">
-     <number>0</number>
+     <number>2</number>
     </property>
     <property name="topMargin">
-     <number>0</number>
+     <number>2</number>
     </property>
     <property name="rightMargin">
-     <number>0</number>
+     <number>2</number>
     </property>
     <property name="bottomMargin">
-     <number>0</number>
+     <number>2</number>
     </property>
     <item>
-     <widget class="QStackedWidget" name="stackedWidget">
-      <property name="font">
-       <font>
-        <family>Arial</family>
-        <pointsize>11</pointsize>
-       </font>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="styleSheet">
+       <string notr="true">QTabWidget::pane {
+    border: 1px solid black;
+}
+
+QTabWidget::tab-bar {
+    width: 16777215px;
+	height: 25px;
+    /*border: 1px solid black;*/
+	/*alignment: center;*/
+}
+QTabBar::tab:selected {
+	background-color: rgb(215, 214, 255);
+    color: blue;
+    border: 0.5px solid blue;
+}
+
+QTabBar::tab:!selected {
+    background: silver;
+    border: 0.5px solid black;
+}
+
+QTabBar::tab:!selected:hover {
+    background: #999;
+}</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>-1</number>
       </property>
-      <widget class="QWidget" name="page_PlainText">
-       <property name="font">
-        <font>
-         <family>Arial</family>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QFrame" name="frame">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QGridLayout" name="gridLayout">
-           <property name="horizontalSpacing">
-            <number>12</number>
-           </property>
-           <property name="verticalSpacing">
-            <number>6</number>
-           </property>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Port Name:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="0">
-            <widget class="QLabel" name="label_7">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Open Mode:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QComboBox" name="comboBox_DataBits">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>25</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QComboBox{
-	combobox-popup: 0;
-	background-color: rgb(119,136,153);
-	color: rgb(240, 255, 255);
-}
-</string>
-             </property>
-             <property name="currentIndex">
-              <number>3</number>
-             </property>
-             <property name="maxVisibleItems">
-              <number>3</number>
-             </property>
-             <property name="maxCount">
-              <number>10</number>
-             </property>
-             <item>
-              <property name="text">
-               <string>Data5</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Data6</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Data7</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Data8</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="2" column="2">
-            <widget class="QLabel" name="label_6">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Flow Control:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="1">
-            <widget class="QComboBox" name="comboBox_OpenMode">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>25</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QComboBox{
-	combobox-popup: 0;
-	background-color: rgb(119,136,153);
-	color: rgb(240, 255, 255);
-}</string>
-             </property>
-             <property name="maxVisibleItems">
-              <number>3</number>
-             </property>
-             <property name="maxCount">
-              <number>10</number>
-             </property>
-             <item>
-              <property name="text">
-               <string>Read Only</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Write Only</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Read Write</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="0" column="2">
-            <widget class="QLabel" name="label_2">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Baud Rate:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="label_3">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Data Bits:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QComboBox" name="comboBox_PortList">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>25</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QComboBox{
-	combobox-popup: 0;
-	background-color: rgb(119,136,153);
-	color: rgb(240, 255, 255);
-}</string>
-             </property>
-             <property name="maxVisibleItems">
-              <number>5</number>
-             </property>
-             <property name="maxCount">
-              <number>100</number>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="2">
-            <widget class="QLabel" name="label_4">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Parity:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="3">
-            <widget class="QComboBox" name="comboBox_FlowControl">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>25</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QComboBox{
-	combobox-popup: 0;
-	background-color: rgb(119,136,153);
-	color: rgb(240, 255, 255);
-}</string>
-             </property>
-             <property name="maxVisibleItems">
-              <number>3</number>
-             </property>
-             <property name="maxCount">
-              <number>10</number>
-             </property>
-             <item>
-              <property name="text">
-               <string>No Flow Ctrl</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Hardware Ctrl</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Software Ctrl</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="1" column="3">
-            <widget class="QComboBox" name="comboBox_Parity">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>25</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QComboBox{
-	combobox-popup: 0;
-	background-color: rgb(119,136,153);
-	color: rgb(240, 255, 255);
-}</string>
-             </property>
-             <property name="maxVisibleItems">
-              <number>3</number>
-             </property>
-             <property name="maxCount">
-              <number>10</number>
-             </property>
-             <item>
-              <property name="text">
-               <string>No Parity</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Even Parity</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Odd Parity</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Space Parity</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Mark Parity</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="0" column="3">
-            <widget class="QComboBox" name="comboBox_BaudRate">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>25</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QComboBox{
-	combobox-popup: 0;
-	background-color: rgb(119,136,153);
-	color: rgb(240, 255, 255);
-}</string>
-             </property>
-             <property name="currentIndex">
-              <number>3</number>
-             </property>
-             <property name="maxVisibleItems">
-              <number>3</number>
-             </property>
-             <property name="maxCount">
-              <number>10</number>
-             </property>
-             <item>
-              <property name="text">
-               <string>1200</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>2400</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>4800</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>9600</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>19200</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>38400</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>57600</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>115200</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="QComboBox" name="comboBox_StopBits">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>25</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QComboBox{
-	combobox-popup: 0;
-	background-color: rgb(119,136,153);
-	color: rgb(240, 255, 255);
-}</string>
-             </property>
-             <property name="maxVisibleItems">
-              <number>3</number>
-             </property>
-             <property name="maxCount">
-              <number>10</number>
-             </property>
-             <item>
-              <property name="text">
-               <string>One Stop</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Two Stop</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>One &amp; Half Stop</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="label_5">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Stop Bits:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="2" colspan="2">
-            <widget class="QPushButton" name="pushButton_Open">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(119,136,153);
-color: rgb(240, 255, 255);</string>
-             </property>
-             <property name="text">
-              <string>Open</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPlainTextEdit" name="plainTextEdit">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <pointsize>11</pointsize>
-           </font>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <widget class="QPushButton" name="pushButton_Clear">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(119,136,153);
-color: rgb(240, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Clear</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="checkBox_Hex">
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Hex</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_Send">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(119,136,153);
-color: rgb(240, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>SEND</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="lineEdit">
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(119,136,153);
-color: rgb(240, 255, 255);</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_Save">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Arial</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(119,136,153);
-color: rgb(240, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Save</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </widget>
+      <property name="iconSize">
+       <size>
+        <width>25</width>
+        <height>25</height>
+       </size>
+      </property>
      </widget>
     </item>
    </layout>
@@ -695,8 +121,16 @@ color: rgb(240, 255, 255);</string>
      <string>Help</string>
     </property>
     <addaction name="actionAbout_Us"/>
+   </widget>
+   <widget class="QMenu" name="menuNew">
+    <property name="title">
+     <string>New</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
+   <addaction name="menuNew"/>
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusBar">
@@ -707,6 +141,10 @@ color: rgb(240, 255, 255);</string>
    </property>
   </widget>
   <action name="actionAbout_Us">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/images/about.png</normaloff>:/images/about.png</iconset>
+   </property>
    <property name="text">
     <string>About Us</string>
    </property>
@@ -717,8 +155,26 @@ color: rgb(240, 255, 255);</string>
    </property>
   </action>
   <action name="actionExit">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/images/close-window.png</normaloff>:/images/close-window.png</iconset>
+   </property>
    <property name="text">
     <string>Exit</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+    </font>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/images/new-window.png</normaloff>:/images/new-window.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
    </property>
    <property name="font">
     <font>

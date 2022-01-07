@@ -29,13 +29,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        SerialCOM.cpp
+        SerialCOM.cpp \
+    WidgetSerialPort.cpp
 
 HEADERS += \
-        SerialCOM.h
+        SerialCOM.h \
+    WidgetSerialPort.h
 
 FORMS += \
-        SerialCOM.ui
+        SerialCOM.ui \
+    WidgetSerialPort.ui
 
 RESOURCES += \
     icons.qrc

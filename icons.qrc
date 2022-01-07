@@ -5,5 +5,10 @@
         <file>images/help.png</file>
         <file>images/down-arrow.png</file>
         <file>images/expand-arrow.png</file>
+        <file>images/connected.png</file>
+        <file>images/disconnected.png</file>
+        <file>images/close-window.png</file>
+        <file>images/new-window.png</file>
+        <file>images/about.png</file>
     </qresource>
 </RCC>

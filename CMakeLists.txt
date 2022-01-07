@@ -4,7 +4,7 @@ project(SerialCOM
   VERSION
     1.0
   DESCRIPTION
-    "Media Player using GStreamer"
+    "Serial Port Communication"
   LANGUAGES
     CXX
 )
