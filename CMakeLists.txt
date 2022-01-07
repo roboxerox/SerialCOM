@@ -24,12 +24,10 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 find_package(Qt5Core REQUIRED)
 
-add_executable(SerialCOM
-    SerialCOM.ui
-    SerialCOM.cpp
-    main.cpp
-    icons.qrc
-)
+set(SOURCES WidgetSerialPort.ui WidgetSerialPort.cpp WidgetSerialPort.h 
+		SerialCOM.ui SerialCOM.cpp SerialCOM.h main.cpp icons.qrc)
+
+add_executable(SerialCOM ${SOURCES})
 
 add_definitions(-DQT_NO_VERSION_TAGGING)
 
@@ -37,3 +35,4 @@ target_link_libraries(SerialCOM Qt5::Widgets)
 
 qt5_use_modules(SerialCOM Core SerialPort)
 
+include_directories(. .)
