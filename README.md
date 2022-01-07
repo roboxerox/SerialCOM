@@ -14,14 +14,15 @@ For More Help [https://wiki.qt.io/Install_Qt_5_on_Ubuntu]
 	sudo zypper install -t pattern devel_basis
 
 
-## Step to compile
-1. Open QtCreator
-2. Open Project -> select file (SerialCOM.pro)
-3. Build and run
+## Step to compile with qt
+	1. Open QtCreator
+	2. Open Project -> select file (SerialCOM.pro)
+	3. Build and run
 
-## another way
-1. goto working directory(SerialCOM)
-2. comiple with gcc command
+## Step to compile with cmake/make
+	mkdir build  && cd  build
+	cmake ..
+	make
 
 
 

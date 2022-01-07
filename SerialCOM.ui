@@ -28,7 +28,7 @@
 	color: rgb(255, 255, 255);
 	background-color: rgb(215, 214, 255);
 	background-repeat: no-repeat;
-	background-position: left top;
+	background-position: right bottom;
 	background-origin: content;
 	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(112,128,144, 255), stop:1 rgba(255, 255, 255, 255));
 }</string>
