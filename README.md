@@ -20,6 +20,8 @@ For More Help [https://wiki.qt.io/Install_Qt_5_on_Ubuntu]
 	3. Build and run
 
 ## Step to compile with cmake/make
+	git clone https://github.com/roboxerox/SerialCOM.git
+	cd SerialCOM
 	mkdir build  && cd  build
 	cmake ..
 	make
