@@ -22,6 +22,8 @@ SerialCOM::SerialCOM(QWidget *parent) :
     connect(ui->actionExit,SIGNAL(triggered(bool)),this,SLOT(sl_Close(bool)));
     connect(ui->actionOpen,SIGNAL(triggered(bool)),this,SLOT(sl_OpenNew(bool)));
 
+    connect(ui->tabWidget->tabBar(), SIGNAL(tabCloseRequested(int)), this, SLOT(sl_CloseTab(int)));
+
     sl_OpenNew(true);
 }
 
@@ -40,6 +42,8 @@ SerialCOM::~SerialCOM()
  */
 void SerialCOM::sl_AboutUs(bool ab)
 {
+    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
+           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__;
     Q_UNUSED(ab)
     QMessageBox *cAbout = new QMessageBox;
     cAbout->setIconPixmap(QPixmap(":images/wing_com.png").scaled(QSize(60,40)));
@@ -48,7 +52,7 @@ void SerialCOM::sl_AboutUs(bool ab)
                          "background-color: rgb(215, 214, 255);"
                          "background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(112,128,144, 255), stop:1 rgba(255, 255, 255, 255));"
                      "}");
-    cAbout->setText("SerialCOM\nVersion 0.1.1a\n\n"
+    cAbout->setText("SerialCOM\nVersion "+STR_SOFTWARE_VERSION+"\n\n"
                     "The program is provided AS IS with NO WARRANTY OF ANY KIND.");
     cAbout->setStandardButtons(QMessageBox::Close);
     cAbout->exec();
@@ -60,6 +64,8 @@ void SerialCOM::sl_AboutUs(bool ab)
  */
 void SerialCOM::sl_Close(bool cl)
 {
+    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
+           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__;
     Q_UNUSED(cl)
     close();
 }
@@ -71,11 +77,41 @@ void SerialCOM::sl_Close(bool cl)
  */
 void SerialCOM::sl_OpenNew(bool nStat)
 {
+    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
+           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__;
     Q_UNUSED(nStat)
 
-    WidgetSerialPort *uiSerial = new WidgetSerialPort(this,"Serial"+QString::number(ui->tabWidget->count()));
+    int num = 0;
+    for(int i = 0;i<ui->tabWidget->count();i++)
+    {
+        if(!sp_widgets.value(i))
+        {
+            num = i;
+            break;
+        }
+    }
+
+    if(num==0)
+        num = ui->tabWidget->count();
+
+    WidgetSerialPort *uiSerial = new WidgetSerialPort(this, num);
     connect(uiSerial,SIGNAL(si_ChangeStatus(WidgetSerialPort*,int)),this,SLOT(sl_ChangeTabStatus(WidgetSerialPort*,int)));
-    ui->tabWidget->addTab(uiSerial, QIcon(":/images/disconnected.png"),"Serial "+QString::number(ui->tabWidget->count()));
+    ui->tabWidget->addTab(uiSerial, QIcon(":/images/disconnected.png"),"Serial "+QString::number(num));
+
+    sp_widgets.insert(num,uiSerial);
+}
+
+void SerialCOM::sl_CloseTab(int index)
+{
+    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
+           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__;
+    if(index>0)
+    {
+        WidgetSerialPort *uiSerial  =  qobject_cast<WidgetSerialPort*>(ui->tabWidget->widget(index));
+        sp_widgets.remove(uiSerial->TabNum);
+        uiSerial->deleteLater();
+        ui->tabWidget->removeTab(index);
+    }
 }
 
 /**
@@ -85,6 +121,8 @@ void SerialCOM::sl_OpenNew(bool nStat)
  */
 void SerialCOM::sl_ChangeTabStatus(WidgetSerialPort *uiSerialPort, int state)
 {
+    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
+           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__;
     switch (state) {
     case PORT_STATE::OPEN:
         ui->tabWidget->setTabIcon(ui->tabWidget->indexOf(uiSerialPort),QIcon(":/images/connected.png"));
@@ -92,7 +130,7 @@ void SerialCOM::sl_ChangeTabStatus(WidgetSerialPort *uiSerialPort, int state)
         break;
     case PORT_STATE::CLOSE:
         ui->tabWidget->setTabIcon(ui->tabWidget->indexOf(uiSerialPort),QIcon(":/images/disconnected.png"));
-        ui->tabWidget->setTabText(ui->tabWidget->indexOf(uiSerialPort),"Serial "+QString::number(ui->tabWidget->indexOf(uiSerialPort)));
+        ui->tabWidget->setTabText(ui->tabWidget->indexOf(uiSerialPort),uiSerialPort->m_GetTabName());
         break;
     default:
         break;

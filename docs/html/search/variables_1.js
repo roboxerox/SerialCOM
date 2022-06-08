@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['serialport_5fsend_77',['SerialPort_SEND',['../classSerialCOM.html#a181bd4bdcfa3be8fe9a23d2439c264bf',1,'SerialCOM']]],
-  ['sportlist_78',['sPortList',['../classSerialCOM.html#a169398a26fc791df281e202a2884529b',1,'SerialCOM']]],
-  ['strportname_79',['strPortName',['../classSerialCOM.html#aa0c3dd0bf1feeaec1b60fcd64cb38552',1,'SerialCOM']]]
+  ['serialport_5frxtx_108',['SerialPort_RxTx',['../classWidgetSerialPort.html#ac1786a9c8f9a3b21e557a934c7442bdb',1,'WidgetSerialPort']]],
+  ['sp_5fwidgets_109',['sp_widgets',['../classSerialCOM.html#a76bf3d4e45892db6236525b378ecafe2',1,'SerialCOM']]],
+  ['sportlist_110',['sPortList',['../classWidgetSerialPort.html#ac05afce4807d6be25f8912ae3eb9faf7',1,'WidgetSerialPort']]],
+  ['strportname_111',['strPortName',['../classWidgetSerialPort.html#a4fc40dc98345035f3b95e0041acb14dc',1,'WidgetSerialPort']]],
+  ['strtabname_112',['strTabName',['../classWidgetSerialPort.html#a5f6a6426f535666117ec9bdd14584609',1,'WidgetSerialPort']]]
 ];

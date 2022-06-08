@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['on_5fpushbutton_5fclear_5fclicked_16',['on_pushButton_Clear_clicked',['../classSerialCOM.html#a6675529794fdf7d71c9e7ffc8199d0d6',1,'SerialCOM']]],
-  ['on_5fpushbutton_5fopen_5fclicked_17',['on_pushButton_Open_clicked',['../classSerialCOM.html#a8156ca342f7f8ad3ceb3d4e7ed14bc11',1,'SerialCOM']]],
-  ['on_5fpushbutton_5fsave_5fclicked_18',['on_pushButton_Save_clicked',['../classSerialCOM.html#af141e2a72c6c048f104059a8c4fbaf4c',1,'SerialCOM']]],
-  ['on_5fpushbutton_5fsend_5fclicked_19',['on_pushButton_Send_clicked',['../classSerialCOM.html#ab35da851cf64923aebbcd3b956770f25',1,'SerialCOM']]]
+  ['on_5fpushbutton_5fclear_5fclicked_20',['on_pushButton_Clear_clicked',['../classWidgetSerialPort.html#a68a880e17b111e9617db66aeb4790347',1,'WidgetSerialPort']]],
+  ['on_5fpushbutton_5fopen_5fclicked_21',['on_pushButton_Open_clicked',['../classWidgetSerialPort.html#a6a5d23d99b512b340ac5161331d84ff0',1,'WidgetSerialPort']]],
+  ['on_5fpushbutton_5fsave_5fclicked_22',['on_pushButton_Save_clicked',['../classWidgetSerialPort.html#a8762c467a8cf78c35e72a5e4727f4db3',1,'WidgetSerialPort']]],
+  ['on_5fpushbutton_5fsend_5fclicked_23',['on_pushButton_Send_clicked',['../classWidgetSerialPort.html#a40b831a285420116fd90477db58a48ff',1,'WidgetSerialPort']]],
+  ['open_24',['OPEN',['../namespacePORT__STATE.html#aa204830cb93b91ba1b6b0db25fce1477a9a1783f5e71e5ca4e58a8f1ce5075d9e',1,'PORT_STATE']]]
 ];

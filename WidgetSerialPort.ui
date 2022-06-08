@@ -635,7 +635,8 @@ color: rgb(240, 255, 255);</string>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <pointsize>8</pointsize>
+       <italic>true</italic>
       </font>
      </property>
      <property name="text">

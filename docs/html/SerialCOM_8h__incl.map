@@ -1,11 +1,13 @@
 <map id="SerialCOM.h" name="SerialCOM.h">
-<area shape="rect" id="node1" title="This is header of SerialCOM class." alt="" coords="379,5,477,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,112,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="137,80,226,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="250,80,321,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="345,80,410,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="434,80,523,107"/>
-<area shape="rect" id="node7" title=" " alt="" coords="547,80,658,107"/>
-<area shape="rect" id="node8" title=" " alt="" coords="682,80,790,107"/>
-<area shape="rect" id="node9" title=" " alt="" coords="815,80,905,107"/>
+<area shape="rect" id="node1" title="This is header of SerialCOM class." alt="" coords="273,5,371,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="198,80,305,107"/>
+<area shape="rect" id="node3" href="$WidgetSerialPort_8h.html" title="This is header of WidgetSerialPort class." alt="" coords="329,80,459,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,155,79,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="103,155,192,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="216,155,287,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="311,155,376,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="400,155,489,181"/>
+<area shape="rect" id="node9" title=" " alt="" coords="513,155,624,181"/>
+<area shape="rect" id="node10" title=" " alt="" coords="648,155,756,181"/>
+<area shape="rect" id="node11" title=" " alt="" coords="781,155,871,181"/>
 </map>

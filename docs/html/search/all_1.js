@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['eventfilter_1',['eventFilter',['../classSerialCOM.html#a9cda67cd8fedbb2aaa4418c51fe5de19',1,'SerialCOM']]]
+  ['eventfilter_3',['eventFilter',['../classWidgetSerialPort.html#a5484e76cc029919d7c876108d7d368e2',1,'WidgetSerialPort']]]
 ];

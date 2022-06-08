@@ -39,9 +39,10 @@ class WidgetSerialPort : public QWidget
     QSerialPort::FlowControl m_Get_uiFlowControl();
     QSerialPort::OpenModeFlag m_Get_uiOpenMode();
 public:
-    explicit WidgetSerialPort(QWidget *parent = 0,QString TabName ="Serial0");
+    explicit WidgetSerialPort(QWidget *parent = 0,int Tab_num =0);
     ~WidgetSerialPort();
-    QSerialPort * SerialPort_SEND;/**< Object of QSerialPort **/
+    int TabNum = 0;
+    QSerialPort * SerialPort_RxTx;/**< Object of QSerialPort **/
     QTimer *timerHealth;/**< Object of QTimer **/
     QTimer *timerSerialPortList;/**< Object of QTimer **/
     QString strPortName;/**< QString Object for Serial Port Name **/

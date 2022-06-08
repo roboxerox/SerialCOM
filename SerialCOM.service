@@ -1,0 +1,20 @@
+[Unit]
+Description=Serial Communication
+Before = network-online.target
+Wants=network-online.target systemd-networkd-wait-online.service
+
+
+[Service]
+User=root
+Restart=on-failure
+#Restart=always
+RestartSec=5s
+Environment=DISPLAY=:0
+#Environment="XAUTHORITY=/home/root/.Xauthority"
+WorkingDirectory=/home/root
+ExecStart=/home/root/SerialCOM
+StandardOutput=file:/var/log/SerialCOM.log
+
+
+[Install]
+WantedBy=multi-user.target

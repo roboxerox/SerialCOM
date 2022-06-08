@@ -12,7 +12,7 @@
 
 #define VER_MAJOR               QString("0")
 #define VER_MINOR               QString("2")
-#define VER_BUILD               QString("1b")
+#define VER_BUILD               QString("1c")
 #define STR_PRODUCTNAME         QString("SerialCOM")
 #define STR_SOFTWARE_VERSION    QString(VER_MAJOR+"."+VER_MINOR+"."+VER_BUILD)
 #define STR_FILEDESCRIPTION     QString("Serial port communication")
@@ -34,9 +34,12 @@ private slots:
     void sl_AboutUs(bool ab);
     void sl_Close(bool cl);
     void sl_OpenNew(bool nStat);
+    void sl_CloseTab(int index);
     void sl_ChangeTabStatus(WidgetSerialPort* uiSerialPort,int state);
 private:
     Ui::SerialCOM *ui;
+    QMap<int,bool> index_stat;
+    QMap<int,WidgetSerialPort*> sp_widgets;
 };
 
 #endif // SERIALCOM_H

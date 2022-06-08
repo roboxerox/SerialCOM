@@ -6,8 +6,7 @@
 
 
 
-Inheritance diagram for Serial\+COM\+:
-\nopagebreak
+Inheritance diagram for Serial\+COM\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +15,7 @@ Inheritance diagram for Serial\+COM\+:
 \end{figure}
 
 
-Collaboration diagram for Serial\+COM\+:
-\nopagebreak
+Collaboration diagram for Serial\+COM\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -31,78 +29,27 @@ Collaboration diagram for Serial\+COM\+:
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_a86353777ce5a85c1c16ffb93283eb83c}{Serial\+COM\+::\+Serial\+COM}}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classSerialCOM_a262f6dfb6d5a975737415464bc728471}{$\sim$\+Serial\+COM}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_a262f6dfb6d5a975737415464bc728471}{Serial\+COM\+::$\sim$\+Serial\+COM}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-QSerial\+Port $\ast$ \mbox{\hyperlink{classSerialCOM_a181bd4bdcfa3be8fe9a23d2439c264bf}{Serial\+Port\+\_\+\+SEND}}
-\item 
-QTimer $\ast$ \mbox{\hyperlink{classSerialCOM_ac22c37fea3236204b3f3dfa16fc959c5}{timer\+Health}}
-\item 
-QTimer $\ast$ \mbox{\hyperlink{classSerialCOM_aeab54033fbf8b4e8c328d631926d3eab}{timer\+Serial\+Port\+List}}
-\item 
-QString \mbox{\hyperlink{classSerialCOM_aa0c3dd0bf1feeaec1b60fcd64cb38552}{str\+Port\+Name}}
-\item 
-qint32 \mbox{\hyperlink{classSerialCOM_a08af2383c3d071bcfbc7d8a4a636b140}{i\+Baudrate}} = QSerial\+Port\+::\+Baud9600
-\item 
-QSerial\+Port\+::\+Data\+Bits \mbox{\hyperlink{classSerialCOM_ac913d314a46ab8c6516425baa85f31bd}{i\+Data\+Bits}} = QSerial\+Port\+::\+Data8
-\item 
-QSerial\+Port\+::\+Parity \mbox{\hyperlink{classSerialCOM_a45a161aaacb605694cd025e8d333e03c}{i\+Parity}} = QSerial\+Port\+::\+No\+Parity
-\item 
-QSerial\+Port\+::\+Stop\+Bits \mbox{\hyperlink{classSerialCOM_a70ec80979cc4d9a510eacf6f4108cfc2}{i\+Stop\+Bits}} = QSerial\+Port\+::\+One\+Stop
-\item 
-QSerial\+Port\+::\+Flow\+Control \mbox{\hyperlink{classSerialCOM_a07ea6d57d4df78871ce935af65ae91a6}{i\+Flow\+Control}} = QSerial\+Port\+::\+No\+Flow\+Control
-\item 
-QSerial\+Port\+::\+Open\+Mode\+Flag \mbox{\hyperlink{classSerialCOM_aa4cb21510307f96a7ab929b72a03a258}{i\+Open\+Mode}} = QSerial\+Port\+::\+Read\+Write
-\item 
-bool \mbox{\hyperlink{classSerialCOM_ab3ce9e0944c59c14f35f6df55f675291}{is\+Serial\+Port\+Open}} = false
-\end{DoxyCompactItemize}
-\doxysubsection*{Protected Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-virtual bool \mbox{\hyperlink{classSerialCOM_a9cda67cd8fedbb2aaa4418c51fe5de19}{event\+Filter}} (QObject $\ast$watched, QEvent $\ast$event)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_a9cda67cd8fedbb2aaa4418c51fe5de19}{Serial\+COM\+::event\+Filter}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Slots}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{classSerialCOM_aed7e8904a78eec678e7e8c69be1870a4}{sl\+\_\+\+Update\+Serial\+Port\+List}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_aed7e8904a78eec678e7e8c69be1870a4}{Serial\+COM\+::sl\+\_\+\+Update\+Serial\+Port\+List}} This slot fetch system plugged serial port on every 10sec by timer\+Serial\+Port\+List and update port name in combo box of ui. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classSerialCOM_a3181327165f18372061220ac6732dbe7}{sl\+\_\+\+Read\+Data}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_a3181327165f18372061220ac6732dbe7}{Serial\+COM\+::sl\+\_\+\+Read\+Data}} This is slot to read RX data when data is available. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classSerialCOM_a8156ca342f7f8ad3ceb3d4e7ed14bc11}{on\+\_\+push\+Button\+\_\+\+Open\+\_\+clicked}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_a8156ca342f7f8ad3ceb3d4e7ed14bc11}{Serial\+COM\+::on\+\_\+push\+Button\+\_\+\+Open\+\_\+clicked}} This is slot of Open button. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classSerialCOM_a47e7540f7ee14400df65d43ce807c5c3}{sl\+\_\+\+Connect}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_a47e7540f7ee14400df65d43ce807c5c3}{Serial\+COM\+::sl\+\_\+\+Connect}} This is slot of timer\+Health, to check and reconnect at 10 seconds interval. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classSerialCOM_a5263a35ceeaaba00aee74c7ce3f6dc1b}{sl\+\_\+\+Read\+Output\+Error}} (QSerial\+Port\+::\+Serial\+Port\+Error e)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_a5263a35ceeaaba00aee74c7ce3f6dc1b}{Serial\+COM\+::sl\+\_\+\+Read\+Output\+Error}} This slot handle Serial port error. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classSerialCOM_ab35da851cf64923aebbcd3b956770f25}{on\+\_\+push\+Button\+\_\+\+Send\+\_\+clicked}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_ab35da851cf64923aebbcd3b956770f25}{Serial\+COM\+::on\+\_\+push\+Button\+\_\+\+Send\+\_\+clicked}} This is slot of Send button. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classSerialCOM_a6675529794fdf7d71c9e7ffc8199d0d6}{on\+\_\+push\+Button\+\_\+\+Clear\+\_\+clicked}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_a6675529794fdf7d71c9e7ffc8199d0d6}{Serial\+COM\+::on\+\_\+push\+Button\+\_\+\+Clear\+\_\+clicked}} this is slot to clear plain\+Text\+Edit area. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSerialCOM_ac18b3baded01ddc5a066bdf51898244f}{sl\+\_\+\+About\+Us}} (bool ab)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_ac18b3baded01ddc5a066bdf51898244f}{Serial\+COM\+::sl\+\_\+\+About\+Us}} This is slot to gives details of app. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classSerialCOM_af141e2a72c6c048f104059a8c4fbaf4c}{on\+\_\+push\+Button\+\_\+\+Save\+\_\+clicked}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_af141e2a72c6c048f104059a8c4fbaf4c}{Serial\+COM\+::on\+\_\+push\+Button\+\_\+\+Save\+\_\+clicked}} This is slot to save all log data into a file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSerialCOM_a74b5f736b595eefda24f61b48cf501e2}{sl\+\_\+\+Close}} (bool cl)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_a74b5f736b595eefda24f61b48cf501e2}{Serial\+COM\+::sl\+\_\+\+Close}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_a74b5f736b595eefda24f61b48cf501e2}{Serial\+COM\+::sl\+\_\+\+Close}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSerialCOM_ad00addaec34a5ff8999954f26dbba2c3}{sl\+\_\+\+Open\+New}} (bool n\+Stat)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_ad00addaec34a5ff8999954f26dbba2c3}{Serial\+COM\+::sl\+\_\+\+Open\+New}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSerialCOM_a2a3fe186ed8936ca24c8c3e053867496}{sl\+\_\+\+Close\+Tab}} (int index)
 \item 
-QSerial\+Port\+::\+Data\+Bits \mbox{\hyperlink{classSerialCOM_a0a3d3e1ec9f134a508fe31336a70addc}{m\+\_\+\+Get\+\_\+ui\+Data\+Bits}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_a0a3d3e1ec9f134a508fe31336a70addc}{Serial\+COM\+::m\+\_\+\+Get\+\_\+ui\+Data\+Bits}} This method get Data Bits as per selected combo\+Box\+\_\+\+Data\+Bits. \end{DoxyCompactList}\item 
-QSerial\+Port\+::\+Parity \mbox{\hyperlink{classSerialCOM_a76f20b152bccc8c633453c1989419e77}{m\+\_\+\+Get\+\_\+ui\+Parity}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_a76f20b152bccc8c633453c1989419e77}{Serial\+COM\+::m\+\_\+\+Get\+\_\+ui\+Parity}} This method get Parity as per selected combo\+Box\+\_\+\+Parity. \end{DoxyCompactList}\item 
-QSerial\+Port\+::\+Stop\+Bits \mbox{\hyperlink{classSerialCOM_a65751d7a8eb917fb7447b12cd52bd850}{m\+\_\+\+Get\+\_\+ui\+Stop\+Bits}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_a65751d7a8eb917fb7447b12cd52bd850}{Serial\+COM\+::m\+\_\+\+Get\+\_\+ui\+Stop\+Bits}} This method get Stop Bits as per selected combo\+Box\+\_\+\+Stop\+Bits. \end{DoxyCompactList}\item 
-QSerial\+Port\+::\+Flow\+Control \mbox{\hyperlink{classSerialCOM_a6ecc39fe104da9f3a15778830657b851}{m\+\_\+\+Get\+\_\+ui\+Flow\+Control}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_a6ecc39fe104da9f3a15778830657b851}{Serial\+COM\+::m\+\_\+\+Get\+\_\+ui\+Flow\+Control}} This method get Flow control as per selected combo\+Box\+\_\+\+Flow\+Control. \end{DoxyCompactList}\item 
-QSerial\+Port\+::\+Open\+Mode\+Flag \mbox{\hyperlink{classSerialCOM_a0995c58ca6e2d1c09fb43ce9d214a74c}{m\+\_\+\+Get\+\_\+ui\+Open\+Mode}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_a0995c58ca6e2d1c09fb43ce9d214a74c}{Serial\+COM\+::m\+\_\+\+Get\+\_\+ui\+Open\+Mode}} This method get Open Mode as per selected combo\+Box\+\_\+\+Open\+Mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classSerialCOM_ac373bdbd11d2c6b7084e49fc121b0437}{sl\+\_\+\+Change\+Tab\+Status}} (\mbox{\hyperlink{classWidgetSerialPort}{Widget\+Serial\+Port}} $\ast$ui\+Serial\+Port, int state)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSerialCOM_ac373bdbd11d2c6b7084e49fc121b0437}{Serial\+COM\+::sl\+\_\+\+Change\+Tab\+Status}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 Ui\+::\+Serial\+COM $\ast$ \mbox{\hyperlink{classSerialCOM_a5ceb16ffdc84e3c602053e444adb8ab0}{ui}}
 \item 
-QList$<$ QSerial\+Port\+Info $>$ \mbox{\hyperlink{classSerialCOM_a169398a26fc791df281e202a2884529b}{s\+Port\+List}}
+QMap$<$ int, bool $>$ \mbox{\hyperlink{classSerialCOM_a8095a55dd8d299c97bb451f9b4b5281f}{index\+\_\+stat}}
+\item 
+QMap$<$ int, \mbox{\hyperlink{classWidgetSerialPort}{Widget\+Serial\+Port}} $\ast$ $>$ \mbox{\hyperlink{classSerialCOM_a76bf3d4e45892db6236525b378ecafe2}{sp\+\_\+widgets}}
 \end{DoxyCompactItemize}
 
 
@@ -135,131 +82,6 @@ QList$<$ QSerial\+Port\+Info $>$ \mbox{\hyperlink{classSerialCOM_a169398a26fc791
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classSerialCOM_a9cda67cd8fedbb2aaa4418c51fe5de19}\label{classSerialCOM_a9cda67cd8fedbb2aaa4418c51fe5de19}} 
-\index{SerialCOM@{SerialCOM}!eventFilter@{eventFilter}}
-\index{eventFilter@{eventFilter}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{eventFilter()}{eventFilter()}}
-{\footnotesize\ttfamily bool Serial\+COM\+::event\+Filter (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{obj,  }\item[{QEvent $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
-
-
-
-\mbox{\hyperlink{classSerialCOM_a9cda67cd8fedbb2aaa4418c51fe5de19}{Serial\+COM\+::event\+Filter}}. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em watched} & \\
-\hline
-{\em event} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
-\mbox{\Hypertarget{classSerialCOM_a0a3d3e1ec9f134a508fe31336a70addc}\label{classSerialCOM_a0a3d3e1ec9f134a508fe31336a70addc}} 
-\index{SerialCOM@{SerialCOM}!m\_Get\_uiDataBits@{m\_Get\_uiDataBits}}
-\index{m\_Get\_uiDataBits@{m\_Get\_uiDataBits}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{m\_Get\_uiDataBits()}{m\_Get\_uiDataBits()}}
-{\footnotesize\ttfamily QSerial\+Port\+::\+Data\+Bits Serial\+COM\+::m\+\_\+\+Get\+\_\+ui\+Data\+Bits (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-\mbox{\hyperlink{classSerialCOM_a0a3d3e1ec9f134a508fe31336a70addc}{Serial\+COM\+::m\+\_\+\+Get\+\_\+ui\+Data\+Bits}} This method get Data Bits as per selected combo\+Box\+\_\+\+Data\+Bits. 
-
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
-\mbox{\Hypertarget{classSerialCOM_a6ecc39fe104da9f3a15778830657b851}\label{classSerialCOM_a6ecc39fe104da9f3a15778830657b851}} 
-\index{SerialCOM@{SerialCOM}!m\_Get\_uiFlowControl@{m\_Get\_uiFlowControl}}
-\index{m\_Get\_uiFlowControl@{m\_Get\_uiFlowControl}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{m\_Get\_uiFlowControl()}{m\_Get\_uiFlowControl()}}
-{\footnotesize\ttfamily QSerial\+Port\+::\+Flow\+Control Serial\+COM\+::m\+\_\+\+Get\+\_\+ui\+Flow\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-\mbox{\hyperlink{classSerialCOM_a6ecc39fe104da9f3a15778830657b851}{Serial\+COM\+::m\+\_\+\+Get\+\_\+ui\+Flow\+Control}} This method get Flow control as per selected combo\+Box\+\_\+\+Flow\+Control. 
-
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
-\mbox{\Hypertarget{classSerialCOM_a0995c58ca6e2d1c09fb43ce9d214a74c}\label{classSerialCOM_a0995c58ca6e2d1c09fb43ce9d214a74c}} 
-\index{SerialCOM@{SerialCOM}!m\_Get\_uiOpenMode@{m\_Get\_uiOpenMode}}
-\index{m\_Get\_uiOpenMode@{m\_Get\_uiOpenMode}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{m\_Get\_uiOpenMode()}{m\_Get\_uiOpenMode()}}
-{\footnotesize\ttfamily QSerial\+Port\+::\+Open\+Mode\+Flag Serial\+COM\+::m\+\_\+\+Get\+\_\+ui\+Open\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-\mbox{\hyperlink{classSerialCOM_a0995c58ca6e2d1c09fb43ce9d214a74c}{Serial\+COM\+::m\+\_\+\+Get\+\_\+ui\+Open\+Mode}} This method get Open Mode as per selected combo\+Box\+\_\+\+Open\+Mode. 
-
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
-\mbox{\Hypertarget{classSerialCOM_a76f20b152bccc8c633453c1989419e77}\label{classSerialCOM_a76f20b152bccc8c633453c1989419e77}} 
-\index{SerialCOM@{SerialCOM}!m\_Get\_uiParity@{m\_Get\_uiParity}}
-\index{m\_Get\_uiParity@{m\_Get\_uiParity}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{m\_Get\_uiParity()}{m\_Get\_uiParity()}}
-{\footnotesize\ttfamily QSerial\+Port\+::\+Parity Serial\+COM\+::m\+\_\+\+Get\+\_\+ui\+Parity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-\mbox{\hyperlink{classSerialCOM_a76f20b152bccc8c633453c1989419e77}{Serial\+COM\+::m\+\_\+\+Get\+\_\+ui\+Parity}} This method get Parity as per selected combo\+Box\+\_\+\+Parity. 
-
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
-\mbox{\Hypertarget{classSerialCOM_a65751d7a8eb917fb7447b12cd52bd850}\label{classSerialCOM_a65751d7a8eb917fb7447b12cd52bd850}} 
-\index{SerialCOM@{SerialCOM}!m\_Get\_uiStopBits@{m\_Get\_uiStopBits}}
-\index{m\_Get\_uiStopBits@{m\_Get\_uiStopBits}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{m\_Get\_uiStopBits()}{m\_Get\_uiStopBits()}}
-{\footnotesize\ttfamily QSerial\+Port\+::\+Stop\+Bits Serial\+COM\+::m\+\_\+\+Get\+\_\+ui\+Stop\+Bits (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-\mbox{\hyperlink{classSerialCOM_a65751d7a8eb917fb7447b12cd52bd850}{Serial\+COM\+::m\+\_\+\+Get\+\_\+ui\+Stop\+Bits}} This method get Stop Bits as per selected combo\+Box\+\_\+\+Stop\+Bits. 
-
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
-\mbox{\Hypertarget{classSerialCOM_a6675529794fdf7d71c9e7ffc8199d0d6}\label{classSerialCOM_a6675529794fdf7d71c9e7ffc8199d0d6}} 
-\index{SerialCOM@{SerialCOM}!on\_pushButton\_Clear\_clicked@{on\_pushButton\_Clear\_clicked}}
-\index{on\_pushButton\_Clear\_clicked@{on\_pushButton\_Clear\_clicked}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{on\_pushButton\_Clear\_clicked}{on\_pushButton\_Clear\_clicked}}
-{\footnotesize\ttfamily void Serial\+COM\+::on\+\_\+push\+Button\+\_\+\+Clear\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-\mbox{\hyperlink{classSerialCOM_a6675529794fdf7d71c9e7ffc8199d0d6}{Serial\+COM\+::on\+\_\+push\+Button\+\_\+\+Clear\+\_\+clicked}} this is slot to clear plain\+Text\+Edit area. 
-
-\mbox{\Hypertarget{classSerialCOM_a8156ca342f7f8ad3ceb3d4e7ed14bc11}\label{classSerialCOM_a8156ca342f7f8ad3ceb3d4e7ed14bc11}} 
-\index{SerialCOM@{SerialCOM}!on\_pushButton\_Open\_clicked@{on\_pushButton\_Open\_clicked}}
-\index{on\_pushButton\_Open\_clicked@{on\_pushButton\_Open\_clicked}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{on\_pushButton\_Open\_clicked}{on\_pushButton\_Open\_clicked}}
-{\footnotesize\ttfamily void Serial\+COM\+::on\+\_\+push\+Button\+\_\+\+Open\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-\mbox{\hyperlink{classSerialCOM_a8156ca342f7f8ad3ceb3d4e7ed14bc11}{Serial\+COM\+::on\+\_\+push\+Button\+\_\+\+Open\+\_\+clicked}} This is slot of Open button. 
-
-\mbox{\Hypertarget{classSerialCOM_af141e2a72c6c048f104059a8c4fbaf4c}\label{classSerialCOM_af141e2a72c6c048f104059a8c4fbaf4c}} 
-\index{SerialCOM@{SerialCOM}!on\_pushButton\_Save\_clicked@{on\_pushButton\_Save\_clicked}}
-\index{on\_pushButton\_Save\_clicked@{on\_pushButton\_Save\_clicked}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{on\_pushButton\_Save\_clicked}{on\_pushButton\_Save\_clicked}}
-{\footnotesize\ttfamily void Serial\+COM\+::on\+\_\+push\+Button\+\_\+\+Save\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-\mbox{\hyperlink{classSerialCOM_af141e2a72c6c048f104059a8c4fbaf4c}{Serial\+COM\+::on\+\_\+push\+Button\+\_\+\+Save\+\_\+clicked}} This is slot to save all log data into a file. 
-
-\mbox{\Hypertarget{classSerialCOM_ab35da851cf64923aebbcd3b956770f25}\label{classSerialCOM_ab35da851cf64923aebbcd3b956770f25}} 
-\index{SerialCOM@{SerialCOM}!on\_pushButton\_Send\_clicked@{on\_pushButton\_Send\_clicked}}
-\index{on\_pushButton\_Send\_clicked@{on\_pushButton\_Send\_clicked}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{on\_pushButton\_Send\_clicked}{on\_pushButton\_Send\_clicked}}
-{\footnotesize\ttfamily void Serial\+COM\+::on\+\_\+push\+Button\+\_\+\+Send\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-\mbox{\hyperlink{classSerialCOM_ab35da851cf64923aebbcd3b956770f25}{Serial\+COM\+::on\+\_\+push\+Button\+\_\+\+Send\+\_\+clicked}} This is slot of Send button. 
-
 \mbox{\Hypertarget{classSerialCOM_ac18b3baded01ddc5a066bdf51898244f}\label{classSerialCOM_ac18b3baded01ddc5a066bdf51898244f}} 
 \index{SerialCOM@{SerialCOM}!sl\_AboutUs@{sl\_AboutUs}}
 \index{sl\_AboutUs@{sl\_AboutUs}!SerialCOM@{SerialCOM}}
@@ -273,6 +95,23 @@ QList$<$ QSerial\+Port\+Info $>$ \mbox{\hyperlink{classSerialCOM_a169398a26fc791
 
 \begin{DoxyParams}{Parameters}
 {\em ab} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSerialCOM_ac373bdbd11d2c6b7084e49fc121b0437}\label{classSerialCOM_ac373bdbd11d2c6b7084e49fc121b0437}} 
+\index{SerialCOM@{SerialCOM}!sl\_ChangeTabStatus@{sl\_ChangeTabStatus}}
+\index{sl\_ChangeTabStatus@{sl\_ChangeTabStatus}!SerialCOM@{SerialCOM}}
+\doxysubsubsection{\texorpdfstring{sl\_ChangeTabStatus}{sl\_ChangeTabStatus}}
+{\footnotesize\ttfamily void Serial\+COM\+::sl\+\_\+\+Change\+Tab\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWidgetSerialPort}{Widget\+Serial\+Port}} $\ast$}]{ui\+Serial\+Port,  }\item[{int}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{classSerialCOM_ac373bdbd11d2c6b7084e49fc121b0437}{Serial\+COM\+::sl\+\_\+\+Change\+Tab\+Status}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui\+Serial\+Port} & \\
+\hline
+{\em state} & \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classSerialCOM_a74b5f736b595eefda24f61b48cf501e2}\label{classSerialCOM_a74b5f736b595eefda24f61b48cf501e2}} 
@@ -290,127 +129,43 @@ QList$<$ QSerial\+Port\+Info $>$ \mbox{\hyperlink{classSerialCOM_a169398a26fc791
 {\em cl} & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classSerialCOM_a47e7540f7ee14400df65d43ce807c5c3}\label{classSerialCOM_a47e7540f7ee14400df65d43ce807c5c3}} 
-\index{SerialCOM@{SerialCOM}!sl\_Connect@{sl\_Connect}}
-\index{sl\_Connect@{sl\_Connect}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{sl\_Connect}{sl\_Connect}}
-{\footnotesize\ttfamily void Serial\+COM\+::sl\+\_\+\+Connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+\mbox{\Hypertarget{classSerialCOM_a2a3fe186ed8936ca24c8c3e053867496}\label{classSerialCOM_a2a3fe186ed8936ca24c8c3e053867496}} 
+\index{SerialCOM@{SerialCOM}!sl\_CloseTab@{sl\_CloseTab}}
+\index{sl\_CloseTab@{sl\_CloseTab}!SerialCOM@{SerialCOM}}
+\doxysubsubsection{\texorpdfstring{sl\_CloseTab}{sl\_CloseTab}}
+{\footnotesize\ttfamily void Serial\+COM\+::sl\+\_\+\+Close\+Tab (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classSerialCOM_ad00addaec34a5ff8999954f26dbba2c3}\label{classSerialCOM_ad00addaec34a5ff8999954f26dbba2c3}} 
+\index{SerialCOM@{SerialCOM}!sl\_OpenNew@{sl\_OpenNew}}
+\index{sl\_OpenNew@{sl\_OpenNew}!SerialCOM@{SerialCOM}}
+\doxysubsubsection{\texorpdfstring{sl\_OpenNew}{sl\_OpenNew}}
+{\footnotesize\ttfamily void Serial\+COM\+::sl\+\_\+\+Open\+New (\begin{DoxyParamCaption}\item[{bool}]{n\+Stat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
 
 
-\mbox{\hyperlink{classSerialCOM_a47e7540f7ee14400df65d43ce807c5c3}{Serial\+COM\+::sl\+\_\+\+Connect}} This is slot of timer\+Health, to check and reconnect at 10 seconds interval. 
-
-\mbox{\Hypertarget{classSerialCOM_a3181327165f18372061220ac6732dbe7}\label{classSerialCOM_a3181327165f18372061220ac6732dbe7}} 
-\index{SerialCOM@{SerialCOM}!sl\_ReadData@{sl\_ReadData}}
-\index{sl\_ReadData@{sl\_ReadData}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{sl\_ReadData}{sl\_ReadData}}
-{\footnotesize\ttfamily void Serial\+COM\+::sl\+\_\+\+Read\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-\mbox{\hyperlink{classSerialCOM_a3181327165f18372061220ac6732dbe7}{Serial\+COM\+::sl\+\_\+\+Read\+Data}} This is slot to read RX data when data is available. 
-
-\mbox{\Hypertarget{classSerialCOM_a5263a35ceeaaba00aee74c7ce3f6dc1b}\label{classSerialCOM_a5263a35ceeaaba00aee74c7ce3f6dc1b}} 
-\index{SerialCOM@{SerialCOM}!sl\_ReadOutputError@{sl\_ReadOutputError}}
-\index{sl\_ReadOutputError@{sl\_ReadOutputError}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{sl\_ReadOutputError}{sl\_ReadOutputError}}
-{\footnotesize\ttfamily void Serial\+COM\+::sl\+\_\+\+Read\+Output\+Error (\begin{DoxyParamCaption}\item[{QSerial\+Port\+::\+Serial\+Port\+Error}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-\mbox{\hyperlink{classSerialCOM_a5263a35ceeaaba00aee74c7ce3f6dc1b}{Serial\+COM\+::sl\+\_\+\+Read\+Output\+Error}} This slot handle Serial port error. 
+\mbox{\hyperlink{classSerialCOM_ad00addaec34a5ff8999954f26dbba2c3}{Serial\+COM\+::sl\+\_\+\+Open\+New}}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em e} & type of serial port error \\
+{\em n\+Stat} & This slot add new tab widget of \mbox{\hyperlink{classWidgetSerialPort}{Widget\+Serial\+Port}} \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classSerialCOM_aed7e8904a78eec678e7e8c69be1870a4}\label{classSerialCOM_aed7e8904a78eec678e7e8c69be1870a4}} 
-\index{SerialCOM@{SerialCOM}!sl\_UpdateSerialPortList@{sl\_UpdateSerialPortList}}
-\index{sl\_UpdateSerialPortList@{sl\_UpdateSerialPortList}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{sl\_UpdateSerialPortList}{sl\_UpdateSerialPortList}}
-{\footnotesize\ttfamily void Serial\+COM\+::sl\+\_\+\+Update\+Serial\+Port\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-\mbox{\hyperlink{classSerialCOM_aed7e8904a78eec678e7e8c69be1870a4}{Serial\+COM\+::sl\+\_\+\+Update\+Serial\+Port\+List}} This slot fetch system plugged serial port on every 10sec by timer\+Serial\+Port\+List and update port name in combo box of ui. 
-
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classSerialCOM_a08af2383c3d071bcfbc7d8a4a636b140}\label{classSerialCOM_a08af2383c3d071bcfbc7d8a4a636b140}} 
-\index{SerialCOM@{SerialCOM}!iBaudrate@{iBaudrate}}
-\index{iBaudrate@{iBaudrate}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{iBaudrate}{iBaudrate}}
-{\footnotesize\ttfamily qint32 Serial\+COM\+::i\+Baudrate = QSerial\+Port\+::\+Baud9600}
+\mbox{\Hypertarget{classSerialCOM_a8095a55dd8d299c97bb451f9b4b5281f}\label{classSerialCOM_a8095a55dd8d299c97bb451f9b4b5281f}} 
+\index{SerialCOM@{SerialCOM}!index\_stat@{index\_stat}}
+\index{index\_stat@{index\_stat}!SerialCOM@{SerialCOM}}
+\doxysubsubsection{\texorpdfstring{index\_stat}{index\_stat}}
+{\footnotesize\ttfamily QMap$<$int,bool$>$ Serial\+COM\+::index\+\_\+stat\hspace{0.3cm}{\ttfamily [private]}}
 
-qint32 Object for Serial Port Baud\+Rate \mbox{\Hypertarget{classSerialCOM_ac913d314a46ab8c6516425baa85f31bd}\label{classSerialCOM_ac913d314a46ab8c6516425baa85f31bd}} 
-\index{SerialCOM@{SerialCOM}!iDataBits@{iDataBits}}
-\index{iDataBits@{iDataBits}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{iDataBits}{iDataBits}}
-{\footnotesize\ttfamily QSerial\+Port\+::\+Data\+Bits Serial\+COM\+::i\+Data\+Bits = QSerial\+Port\+::\+Data8}
+\mbox{\Hypertarget{classSerialCOM_a76bf3d4e45892db6236525b378ecafe2}\label{classSerialCOM_a76bf3d4e45892db6236525b378ecafe2}} 
+\index{SerialCOM@{SerialCOM}!sp\_widgets@{sp\_widgets}}
+\index{sp\_widgets@{sp\_widgets}!SerialCOM@{SerialCOM}}
+\doxysubsubsection{\texorpdfstring{sp\_widgets}{sp\_widgets}}
+{\footnotesize\ttfamily QMap$<$int,\mbox{\hyperlink{classWidgetSerialPort}{Widget\+Serial\+Port}}$\ast$$>$ Serial\+COM\+::sp\+\_\+widgets\hspace{0.3cm}{\ttfamily [private]}}
 
-Object for Serial Port Data Bits \mbox{\Hypertarget{classSerialCOM_a07ea6d57d4df78871ce935af65ae91a6}\label{classSerialCOM_a07ea6d57d4df78871ce935af65ae91a6}} 
-\index{SerialCOM@{SerialCOM}!iFlowControl@{iFlowControl}}
-\index{iFlowControl@{iFlowControl}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{iFlowControl}{iFlowControl}}
-{\footnotesize\ttfamily QSerial\+Port\+::\+Flow\+Control Serial\+COM\+::i\+Flow\+Control = QSerial\+Port\+::\+No\+Flow\+Control}
-
-Object for Serial Port Flow Control \mbox{\Hypertarget{classSerialCOM_aa4cb21510307f96a7ab929b72a03a258}\label{classSerialCOM_aa4cb21510307f96a7ab929b72a03a258}} 
-\index{SerialCOM@{SerialCOM}!iOpenMode@{iOpenMode}}
-\index{iOpenMode@{iOpenMode}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{iOpenMode}{iOpenMode}}
-{\footnotesize\ttfamily QSerial\+Port\+::\+Open\+Mode\+Flag Serial\+COM\+::i\+Open\+Mode = QSerial\+Port\+::\+Read\+Write}
-
-Object for Serial Port Open Mode \mbox{\Hypertarget{classSerialCOM_a45a161aaacb605694cd025e8d333e03c}\label{classSerialCOM_a45a161aaacb605694cd025e8d333e03c}} 
-\index{SerialCOM@{SerialCOM}!iParity@{iParity}}
-\index{iParity@{iParity}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{iParity}{iParity}}
-{\footnotesize\ttfamily QSerial\+Port\+::\+Parity Serial\+COM\+::i\+Parity = QSerial\+Port\+::\+No\+Parity}
-
-Object for Serial Port Parity \mbox{\Hypertarget{classSerialCOM_ab3ce9e0944c59c14f35f6df55f675291}\label{classSerialCOM_ab3ce9e0944c59c14f35f6df55f675291}} 
-\index{SerialCOM@{SerialCOM}!isSerialPortOpen@{isSerialPortOpen}}
-\index{isSerialPortOpen@{isSerialPortOpen}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{isSerialPortOpen}{isSerialPortOpen}}
-{\footnotesize\ttfamily bool Serial\+COM\+::is\+Serial\+Port\+Open = false}
-
-boolean Object for serial port open or not \mbox{\Hypertarget{classSerialCOM_a70ec80979cc4d9a510eacf6f4108cfc2}\label{classSerialCOM_a70ec80979cc4d9a510eacf6f4108cfc2}} 
-\index{SerialCOM@{SerialCOM}!iStopBits@{iStopBits}}
-\index{iStopBits@{iStopBits}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{iStopBits}{iStopBits}}
-{\footnotesize\ttfamily QSerial\+Port\+::\+Stop\+Bits Serial\+COM\+::i\+Stop\+Bits = QSerial\+Port\+::\+One\+Stop}
-
-Object for Serial Port Stop Bits \mbox{\Hypertarget{classSerialCOM_a181bd4bdcfa3be8fe9a23d2439c264bf}\label{classSerialCOM_a181bd4bdcfa3be8fe9a23d2439c264bf}} 
-\index{SerialCOM@{SerialCOM}!SerialPort\_SEND@{SerialPort\_SEND}}
-\index{SerialPort\_SEND@{SerialPort\_SEND}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{SerialPort\_SEND}{SerialPort\_SEND}}
-{\footnotesize\ttfamily QSerial\+Port$\ast$ Serial\+COM\+::\+Serial\+Port\+\_\+\+SEND}
-
-Object of QSerial\+Port \mbox{\Hypertarget{classSerialCOM_a169398a26fc791df281e202a2884529b}\label{classSerialCOM_a169398a26fc791df281e202a2884529b}} 
-\index{SerialCOM@{SerialCOM}!sPortList@{sPortList}}
-\index{sPortList@{sPortList}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{sPortList}{sPortList}}
-{\footnotesize\ttfamily QList$<$QSerial\+Port\+Info$>$ Serial\+COM\+::s\+Port\+List\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classSerialCOM_aa0c3dd0bf1feeaec1b60fcd64cb38552}\label{classSerialCOM_aa0c3dd0bf1feeaec1b60fcd64cb38552}} 
-\index{SerialCOM@{SerialCOM}!strPortName@{strPortName}}
-\index{strPortName@{strPortName}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{strPortName}{strPortName}}
-{\footnotesize\ttfamily QString Serial\+COM\+::str\+Port\+Name}
-
-QString Object for Serial Port Name \mbox{\Hypertarget{classSerialCOM_ac22c37fea3236204b3f3dfa16fc959c5}\label{classSerialCOM_ac22c37fea3236204b3f3dfa16fc959c5}} 
-\index{SerialCOM@{SerialCOM}!timerHealth@{timerHealth}}
-\index{timerHealth@{timerHealth}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{timerHealth}{timerHealth}}
-{\footnotesize\ttfamily QTimer$\ast$ Serial\+COM\+::timer\+Health}
-
-Object of QTimer \mbox{\Hypertarget{classSerialCOM_aeab54033fbf8b4e8c328d631926d3eab}\label{classSerialCOM_aeab54033fbf8b4e8c328d631926d3eab}} 
-\index{SerialCOM@{SerialCOM}!timerSerialPortList@{timerSerialPortList}}
-\index{timerSerialPortList@{timerSerialPortList}!SerialCOM@{SerialCOM}}
-\doxysubsubsection{\texorpdfstring{timerSerialPortList}{timerSerialPortList}}
-{\footnotesize\ttfamily QTimer$\ast$ Serial\+COM\+::timer\+Serial\+Port\+List}
-
-Object of QTimer \mbox{\Hypertarget{classSerialCOM_a5ceb16ffdc84e3c602053e444adb8ab0}\label{classSerialCOM_a5ceb16ffdc84e3c602053e444adb8ab0}} 
+\mbox{\Hypertarget{classSerialCOM_a5ceb16ffdc84e3c602053e444adb8ab0}\label{classSerialCOM_a5ceb16ffdc84e3c602053e444adb8ab0}} 
 \index{SerialCOM@{SerialCOM}!ui@{ui}}
 \index{ui@{ui}!SerialCOM@{SerialCOM}}
 \doxysubsubsection{\texorpdfstring{ui}{ui}}

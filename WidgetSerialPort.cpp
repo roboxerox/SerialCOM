@@ -14,16 +14,17 @@
  * @param parent
  * @param TabName
  */
-WidgetSerialPort::WidgetSerialPort(QWidget *parent, QString TabName) :
+WidgetSerialPort::WidgetSerialPort(QWidget *parent, int Tab_num) :
     QWidget(parent),
     ui(new Ui::WidgetSerialPort)
 {
     ui->setupUi(this);
 
-    strTabName = TabName;
-    SerialPort_SEND = new QSerialPort;
-    connect(SerialPort_SEND,SIGNAL(readyRead()),this,SLOT(sl_ReadData()));
-    connect(SerialPort_SEND, SIGNAL(error(QSerialPort::SerialPortError)),this,SLOT(sl_ReadOutputError(QSerialPort::SerialPortError)));
+    TabNum = Tab_num;
+    strTabName = "Serial "+ QString::number(Tab_num);
+    SerialPort_RxTx = new QSerialPort;
+    connect(SerialPort_RxTx,SIGNAL(readyRead()),this,SLOT(sl_ReadData()));
+    connect(SerialPort_RxTx, SIGNAL(error(QSerialPort::SerialPortError)),this,SLOT(sl_ReadOutputError(QSerialPort::SerialPortError)));
 
 
     ui->comboBox_PortList->setEditable(true);
@@ -45,11 +46,18 @@ WidgetSerialPort::WidgetSerialPort(QWidget *parent, QString TabName) :
     timerSerialPortList = new QTimer;
     connect(timerSerialPortList,SIGNAL(timeout()),this, SLOT(sl_UpdateSerialPortList()));
 
-    timerSerialPortList->start(10000);
+    timerSerialPortList->start(5000);
 }
 
 WidgetSerialPort::~WidgetSerialPort()
 {
+    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
+           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"strTabName -"<< strTabName;
+    if(SerialPort_RxTx->isOpen())
+    {
+        SerialPort_RxTx->flush();
+        SerialPort_RxTx->close();
+    }
     delete ui;
 }
 /**
@@ -69,41 +77,21 @@ QString WidgetSerialPort::m_GetTabName()
  */
 bool WidgetSerialPort::eventFilter(QObject *obj, QEvent *event)
 {
-//    if(ui->lineEdit->hasFocus())
-//    {
-//        QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
-//        int keyInt = keyEvent->key();
-
-////        keyEvent->modifiers();
-////        if(keyEvent->modifiers() == Qt::ControlModifier && keyEvent->key() == Qt::Key_D)
-////            qDebug()<<"Press Ctrl + D";
-//        if((keyInt== Qt::Key_Enter || keyInt == Qt::Key_Return)&& ui->lineEdit->text().size()>0)
-//        {
-//            qDebug()<<"Pressed" <<QKeySequence(keyInt).toString(QKeySequence::NativeText)
-//                   <<keyEvent->text();
-//            return true;
-//        }
-//    }
-
-//    return QObject::eventFilter(watched, event);
-
-
-
-    QKeyEvent *KE = static_cast<QKeyEvent*>(event);
-    if (KE->key() == Qt::Key_Return || KE->key() == Qt::Key_Enter)
+    Q_UNUSED(obj)
+    if(ui->lineEdit->hasFocus() && event->type() == QEvent::KeyPress)
     {
-        //qDebug() << "eventFilter" << obj;
-        if (obj == ui->lineEdit)
+        QKeyEvent *KE = static_cast<QKeyEvent*>(event);
+        if (KE->key() == Qt::Key_Return || KE->key() == Qt::Key_Enter)
         {
-            qDebug()<<"Pressed" <<QKeySequence(KE->key()).toString(QKeySequence::NativeText)
-                   <<KE->text();
+            qDebug()<<"Pressed" <<QKeySequence(KE->key()).toString(QKeySequence::NativeText);
+            if(ui->lineEdit->text().size()>0)
+            {
+                on_pushButton_Send_clicked();
+                return true;
+            }
         }
-        else
-            return QObject::eventFilter(obj, event);
-
-        return true;  //return TRUE, stopping event propagation
     }
-        return QObject::eventFilter(obj, event);
+    return false ;
 }
 
 /**
@@ -113,28 +101,23 @@ bool WidgetSerialPort::eventFilter(QObject *obj, QEvent *event)
  */
 QSerialPort::DataBits WidgetSerialPort::m_Get_uiDataBits()
 {
-    QSerialPort::DataBits dBits;
-
+    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
+           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"strTabName -"<< strTabName;
     switch (ui->comboBox_DataBits->currentIndex())
     {
     case 0:
-        dBits = QSerialPort::Data5;
-        break;
+        return QSerialPort::Data5;
     case 1:
-        dBits = QSerialPort::Data6;
-        break;
+        return QSerialPort::Data6;
     case 2:
-        dBits = QSerialPort::Data7;
-        break;
+        return QSerialPort::Data7;
     case 3:
-        dBits = QSerialPort::Data8;
-        break;
+        return QSerialPort::Data8;
     default:
-        dBits = QSerialPort::Data8;
-        break;
+        return QSerialPort::Data8;
     }
 
-    return dBits;
+    return QSerialPort::Data8;
 }
 
 /**
@@ -144,31 +127,25 @@ QSerialPort::DataBits WidgetSerialPort::m_Get_uiDataBits()
  */
 QSerialPort::Parity WidgetSerialPort::m_Get_uiParity()
 {
-    QSerialPort::Parity parity;
-
+    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
+           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"strTabName -"<< strTabName;
     switch (ui->comboBox_Parity->currentIndex())
     {
     case 0:
-        parity = QSerialPort::NoParity;
-        break;
+        return QSerialPort::NoParity;
     case 1:
-        parity = QSerialPort::EvenParity;
-        break;
+        return QSerialPort::EvenParity;
     case 2:
-        parity = QSerialPort::OddParity;
-        break;
+        return QSerialPort::OddParity;
     case 3:
-        parity = QSerialPort::SpaceParity;
-        break;
+        return QSerialPort::SpaceParity;
     case 4:
-        parity = QSerialPort::MarkParity;
-        break;
+        return QSerialPort::MarkParity;
     default:
-        parity = QSerialPort::NoParity;
-        break;
+        return QSerialPort::NoParity;
     }
 
-    return parity;
+    return QSerialPort::NoParity;
 }
 
 /**
@@ -178,25 +155,21 @@ QSerialPort::Parity WidgetSerialPort::m_Get_uiParity()
  */
 QSerialPort::StopBits WidgetSerialPort::m_Get_uiStopBits()
 {
-    QSerialPort::StopBits sBits;
-
+    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
+           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"strTabName -"<< strTabName;
     switch (ui->comboBox_StopBits->currentIndex())
     {
     case 0:
-        sBits = QSerialPort::OneStop;
-        break;
+        return QSerialPort::OneStop;
     case 1:
-        sBits = QSerialPort::TwoStop;
-        break;
+        return QSerialPort::TwoStop;
     case 2:
-        sBits = QSerialPort::OneAndHalfStop;
-        break;
+        return QSerialPort::OneAndHalfStop;
     default:
-        sBits = QSerialPort::OneStop;
-        break;
+        return QSerialPort::OneStop;
     }
 
-    return sBits;
+    return QSerialPort::OneStop;
 }
 
 /**
@@ -206,25 +179,21 @@ QSerialPort::StopBits WidgetSerialPort::m_Get_uiStopBits()
  */
 QSerialPort::FlowControl WidgetSerialPort::m_Get_uiFlowControl()
 {
-    QSerialPort::FlowControl flowCtrl;
-
+    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
+           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"strTabName -"<< strTabName;
     switch (ui->comboBox_FlowControl->currentIndex())
     {
     case 0:
-        flowCtrl = QSerialPort::NoFlowControl;
-        break;
+        return QSerialPort::NoFlowControl;
     case 1:
-        flowCtrl = QSerialPort::HardwareControl;
-        break;
+        return QSerialPort::HardwareControl;
     case 2:
-        flowCtrl = QSerialPort::SoftwareControl;
-        break;
+        return QSerialPort::SoftwareControl;
     default:
-        flowCtrl = QSerialPort::NoFlowControl;
-        break;
+        return QSerialPort::NoFlowControl;
     }
 
-    return flowCtrl;
+    return QSerialPort::NoFlowControl;
 }
 
 /**
@@ -234,25 +203,21 @@ QSerialPort::FlowControl WidgetSerialPort::m_Get_uiFlowControl()
  */
 QSerialPort::OpenModeFlag WidgetSerialPort::m_Get_uiOpenMode()
 {
-    QSerialPort::OpenModeFlag OpenMode;
-
+    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
+           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"strTabName -"<< strTabName;
     switch (ui->comboBox_OpenMode->currentIndex())
     {
     case 0:
-        OpenMode = QSerialPort::ReadOnly;
-        break;
+        return QSerialPort::ReadOnly;
     case 1:
-        OpenMode = QSerialPort::WriteOnly;
-        break;
+        return QSerialPort::WriteOnly;
     case 2:
-        OpenMode = QSerialPort::ReadWrite;
-        break;
+        return QSerialPort::ReadWrite;
     default:
-        OpenMode = QSerialPort::ReadWrite;
-        break;
+        return QSerialPort::ReadWrite;
     }
 
-    return OpenMode;
+    return QSerialPort::ReadWrite;
 }
 
 /**
@@ -261,7 +226,10 @@ QSerialPort::OpenModeFlag WidgetSerialPort::m_Get_uiOpenMode()
  */
 void WidgetSerialPort::on_pushButton_Send_clicked()
 {
-    if(SerialPort_SEND->write(ui->lineEdit->text().toLocal8Bit())!=-1)
+    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
+           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"strTabName -"<< strTabName;
+
+    if(SerialPort_RxTx->write(ui->lineEdit->text().toLocal8Bit())!=-1)
     {
         if(!ui->checkBox_Hex->isChecked())
             ui->plainTextEdit->appendHtml(QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")+
@@ -275,7 +243,7 @@ void WidgetSerialPort::on_pushButton_Send_clicked()
         }
     }
     else
-        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<"NOT write"<<SerialPort_SEND->errorString();
+        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<"NOT write"<<SerialPort_RxTx->errorString();
 
 }
 
@@ -287,6 +255,9 @@ void WidgetSerialPort::on_pushButton_Send_clicked()
  */
 void WidgetSerialPort::sl_UpdateSerialPortList()
 {
+    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
+           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"strTabName -"<< strTabName;
+
     if(isSerialPortOpen)
         return;
 
@@ -308,7 +279,10 @@ void WidgetSerialPort::sl_UpdateSerialPortList()
  */
 void WidgetSerialPort::sl_ReadData()
 {
-    QByteArray data = SerialPort_SEND->readAll();
+    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
+           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"strTabName -"<< strTabName;
+
+    QByteArray data = SerialPort_RxTx->readAll();
     if(data.size()>0)
     {
         if(!ui->checkBox_Hex->isChecked())
@@ -330,6 +304,9 @@ void WidgetSerialPort::sl_ReadData()
  */
 void WidgetSerialPort::on_pushButton_Open_clicked()
 {
+    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
+           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"strTabName -"<< strTabName;
+
     strPortName     = ui->comboBox_PortList->currentText();
     iBaudrate       = ui->comboBox_BaudRate->currentText().toInt();
     iDataBits       = m_Get_uiDataBits();
@@ -346,15 +323,13 @@ void WidgetSerialPort::on_pushButton_Open_clicked()
     else
     {
         timerHealth->stop();
-        SerialPort_SEND->close();
+        SerialPort_RxTx->close();
         ui->pushButton_Open->setText("Open");
         isSerialPortOpen = false;
-        ui->label_Status->setText(strPortName+" Closed at "+QString::number(iBaudrate));
+        ui->label_Status->setText(strPortName+" closed at "+QString::number(iBaudrate));
+        strTabName = "Serial "+ QString::number(TabNum);
         emit si_ChangeStatus(this,PORT_STATE::CLOSE);
     }
-
-//    if(!SerialPort_SEND->isOpen())
-//        QMessageBox::warning(this,"Serial port",strPortName+" is closed. !!\n"+SerialPort_SEND->errorString());
 }
 
 
@@ -364,30 +339,36 @@ void WidgetSerialPort::on_pushButton_Open_clicked()
  */
 void WidgetSerialPort::sl_Connect()
 {
-    if(!SerialPort_SEND->isOpen())
+    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
+           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"strTabName -"<< strTabName;
+
+    if(!SerialPort_RxTx->isOpen())
     {
-        SerialPort_SEND->setPortName(strPortName);
+        SerialPort_RxTx->setPortName(strPortName);
 
-        if(SerialPort_SEND->open(iOpenMode))
+        if(SerialPort_RxTx->open(iOpenMode))
         {
-            SerialPort_SEND->setBaudRate(iBaudrate);
-            SerialPort_SEND->setDataBits(iDataBits);
-            SerialPort_SEND->setParity(iParity);
-            SerialPort_SEND->setStopBits(iStopBits);
-            SerialPort_SEND->setFlowControl(iFlowControl);
+            SerialPort_RxTx->setBaudRate(iBaudrate);
+            SerialPort_RxTx->setDataBits(iDataBits);
+            SerialPort_RxTx->setParity(iParity);
+            SerialPort_RxTx->setStopBits(iStopBits);
+            SerialPort_RxTx->setFlowControl(iFlowControl);
 
-            qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<"Successfully Open Serial port"<<SerialPort_SEND->portName();
+            qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<< "File :"<<__FILE__
+                   <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"Successfully Open Serial port"<<SerialPort_RxTx->portName();
             isSerialPortOpen = true;
-            ui->label_Status->setText(strPortName+" Opened at "+QString::number(iBaudrate));
-            strTabName = "Serial ("+SerialPort_SEND->portName()+")";
+            ui->label_Status->setText(strPortName+" opened at "+QString::number(iBaudrate));
+            strTabName = "Serial ("+SerialPort_RxTx->portName()+")";
             ui->pushButton_Open->setText("Close");
             emit si_ChangeStatus(this,PORT_STATE::OPEN);
         }
         else
         {
-            qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<SerialPort_SEND->portName()<<"Not open "<<SerialPort_SEND->errorString();
+            qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<< "File :"<<__FILE__
+                   <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<SerialPort_RxTx->portName()<<"Not open "<<SerialPort_RxTx->errorString();
             isSerialPortOpen = false;
-            ui->label_Status->setText(strPortName+" Closed at "+QString::number(iBaudrate));
+            ui->label_Status->setText(strPortName+" closed at "+QString::number(iBaudrate));
+            strTabName = "Serial "+ QString::number(TabNum);
             emit si_ChangeStatus(this,PORT_STATE::CLOSE);
         }
     }
@@ -400,12 +381,12 @@ void WidgetSerialPort::sl_Connect()
  */
 void WidgetSerialPort::sl_ReadOutputError(QSerialPort::SerialPortError e)
 {
-    QString error = SerialPort_SEND->portName()+" ";
+    QString error = SerialPort_RxTx->portName()+" ";
 
     if(e != QSerialPort::NoError)
     {
-        if(SerialPort_SEND->isOpen())
-            SerialPort_SEND->close();
+        if(SerialPort_RxTx->isOpen())
+            SerialPort_RxTx->close();
 
         ui->label_Status->setText(strPortName+" Closed at "+QString::number(iBaudrate));
         isSerialPortOpen = false;
@@ -421,63 +402,75 @@ void WidgetSerialPort::sl_ReadOutputError(QSerialPort::SerialPortError e)
         //qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<ErrorMsg;
         break;
     case QSerialPort::DeviceNotFoundError:
-        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<"An error occurred while attempting to open an non-existing device.";
+        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<< "File :"<<__FILE__
+               <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"An error occurred while attempting to open an non-existing device.";
         ErrorMsg = error + "Serial port not found !!";
         break;
     case QSerialPort::PermissionError:
-        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<"An error occurred while attempting to open an already opened device by another process"
+        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<< "File :"<<__FILE__
+               <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"An error occurred while attempting to open an already opened device by another process"
                   " or a user not having enough permission and credentials to open."
                   "An error occurred while attempting to open an already opened device in this object.";
         ErrorMsg = error + "Permission denied !!";
         break;
     case QSerialPort::OpenError:
-        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<"An error occurred while attempting to open an already opened device in this object.";
+        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<< "File :"<<__FILE__
+               <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"An error occurred while attempting to open an already opened device in this object.";
         ErrorMsg = error +"Serial port is already open";
         break;
     case QSerialPort::ParityError:
-        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<"Parity error detected by the hardware while reading data. This value is obsolete."
+        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<< "File :"<<__FILE__
+               <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"Parity error detected by the hardware while reading data. This value is obsolete."
                   " We strongly advise against using it in new code.";
         ErrorMsg = error+ "Parity error detected by the hardware while reading data.!!";
         break;
     case QSerialPort::FramingError:
-        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<"Framing error detected by the hardware while reading data. This value is obsolete."
+        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<< "File :"<<__FILE__
+               <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"Framing error detected by the hardware while reading data. This value is obsolete."
                   " We strongly advise against using it in new code.";
         ErrorMsg = error+"Framing error detected by the hardware while reading data.!!";
         break;
     case QSerialPort::BreakConditionError:
-        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<"Break condition detected by the hardware on the input line. This value is obsolete."
+        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<< "File :"<<__FILE__
+               <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"Break condition detected by the hardware on the input line. This value is obsolete."
                   " We strongly advise against using it in new code.";
         ErrorMsg = error+"Break condition detected by the hardware on the input line.!!";
         break;
     case QSerialPort::WriteError:
         ErrorMsg = error+"An I/O error occurred while writing the data.";
-        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<ErrorMsg;
+        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<< "File :"<<__FILE__
+               <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<ErrorMsg;
         break;
     case QSerialPort::ReadError:
-        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<error+"An I/O error occurred while reading the data.";
-        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<ErrorMsg;
+        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<< "File :"<<__FILE__
+               <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<error+"An I/O error occurred while reading the data.";
         break;
     case QSerialPort::ResourceError:
-        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<"An I/O error occurred when a resource becomes unavailable,"
+        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<< "File :"<<__FILE__
+               <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"An I/O error occurred when a resource becomes unavailable,"
                   " e.g. when the device is unexpectedly removed from the system.";
         ErrorMsg = error+"An I/O error occurred when a resource becomes unavailable.!!";
         break;
     case QSerialPort::UnsupportedOperationError:
-        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<"The requested device operation is not supported "
+        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<< "File :"<<__FILE__
+               <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"The requested device operation is not supported "
                   "or prohibited by the running operating system.";
         ErrorMsg = error+"The requested device operation is not supported.!! ";
         break;
     case QSerialPort::UnknownError:
         ErrorMsg = error+"An unidentified error occurred.";
-        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<ErrorMsg;
+        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<< "File :"<<__FILE__
+               <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<ErrorMsg;
         break;
     case QSerialPort::TimeoutError:
         ErrorMsg = error+"A timeout error occurred.";
-        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<ErrorMsg;
+        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<< "File :"<<__FILE__
+               <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<ErrorMsg;
         break;
     case QSerialPort::NotOpenError:
         ErrorMsg = error+"This error occurs when an operation is executed that can only be successfully performed if the device is open.";
-        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<<ErrorMsg;
+        qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")<< "File :"<<__FILE__
+               <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<ErrorMsg;
         break;
     default:
         break;
@@ -505,6 +498,9 @@ void WidgetSerialPort::on_pushButton_Clear_clicked()
  */
 void WidgetSerialPort::on_pushButton_Save_clicked()
 {
+    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
+           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__ <<"strTabName -"<< strTabName;
+
     if(ui->plainTextEdit->toPlainText().size()<=0)
     {
         QMessageBox::warning(this,"Copy","No data available. !!");
@@ -517,10 +513,18 @@ void WidgetSerialPort::on_pushButton_Save_clicked()
     fileDialog.setNameFilters(filters);
     fileDialog.exec();
 
-    QString fnameName = fileDialog.selectedFiles().first();
+    QString fnameName;
+    if(fileDialog.selectedFiles().count())
+        fnameName = fileDialog.selectedFiles().first();
+    else
+        return;
 
-    qDebug()<<fileDialog.selectedNameFilter() <<fileDialog.selectedMimeTypeFilter();
+    if(fileDialog.selectedNameFilter().contains(".txt"))
+        fnameName.append(".txt");
+    else
+        fnameName.append(".log");
     qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << fnameName;
+
     QFile file(fnameName);
     file.open(QIODevice::WriteOnly);
     QTextStream wrt(&file);

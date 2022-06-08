@@ -93,6 +93,9 @@ QTabBar::tab:!selected:hover {
         <height>25</height>
        </size>
       </property>
+      <property name="tabsClosable">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
    </layout>
