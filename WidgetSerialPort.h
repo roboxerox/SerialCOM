@@ -15,6 +15,7 @@
 #include <QSerialPortInfo>
 #include <QMessageBox>
 #include <QFileDialog>
+#include <QAbstractItemView>
 
 
 namespace PORT_STATE {
@@ -63,6 +64,7 @@ private slots:
     void on_pushButton_Send_clicked();
     void on_pushButton_Clear_clicked();
     void on_pushButton_Save_clicked();
+
 protected:
     virtual bool eventFilter(QObject * watched, QEvent * event);
 signals:
