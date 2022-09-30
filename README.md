@@ -26,6 +26,13 @@ For More Help [https://wiki.qt.io/Install_Qt_5_on_Ubuntu]
 	cmake ..
 	make
 
+### Step to compile with qmake/make
+	git clone https://github.com/roboxerox/SerialCOM.git
+	cd SerialCOM
+	mkdir buildq  && cd  buildq
+	qmake ..
+	make
+
 
 
 
