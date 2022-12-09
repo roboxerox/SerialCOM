@@ -4,9 +4,9 @@
 # Project related configuration options
 #---------------------------------------------------------------------------
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = SerialCOM (Serial Port Communication)
-PROJECT_NUMBER         = 0.2.1d
-PROJECT_BRIEF          = Serial" "Port" "Communication" "Using" "Qt/C++" "and" "Unix/Linux" "based" "platform.
+PROJECT_NAME           = "SerialCOM (Serial Port Communication)"
+PROJECT_NUMBER         = 0.2.1e
+PROJECT_BRIEF          = "Serial Port Communication Using Qt/C++ and Unix/Linux based platform."
 PROJECT_LOGO           = ./images/Connections.png
 OUTPUT_DIRECTORY       = ./docs
 CREATE_SUBDIRS         = NO

@@ -30,8 +30,16 @@ For More Help [https://wiki.qt.io/Install_Qt_5_on_Ubuntu]
 
 	git clone https://github.com/roboxerox/SerialCOM.git
 	cd SerialCOM
-	mkdir build  && cd  build
+	mkdir c_build  && cd  c_build
 	cmake ..
+	make
+	
+### Step to compile with qmake/make
+
+	git clone https://github.com/roboxerox/SerialCOM.git
+	cd SerialCOM
+	mkdir q_build  && cd  q_build
+	qmake ..
 	make
 
 
