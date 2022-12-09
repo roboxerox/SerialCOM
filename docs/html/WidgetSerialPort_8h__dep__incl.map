@@ -1,7 +1,0 @@
-<map id="WidgetSerialPort.h" name="WidgetSerialPort.h">
-<area shape="rect" id="node1" title="This is header of WidgetSerialPort class." alt="" coords="108,5,239,32"/>
-<area shape="rect" id="node2" href="$SerialCOM_8h.html" title="This is header of SerialCOM class." alt="" coords="53,80,150,107"/>
-<area shape="rect" id="node5" href="$WidgetSerialPort_8cpp.html" title="This is WidgetSerialPort QWidget class. It is handling QSerialPort with data flow (Open/close,..." alt="" coords="174,80,319,107"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title="This is main class." alt="" coords="5,155,80,181"/>
-<area shape="rect" id="node4" href="$SerialCOM_8cpp.html" title="This is SerialCOM main UI class. It is handling WidgetSerialPort widget." alt="" coords="105,155,215,181"/>
-</map>

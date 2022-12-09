@@ -24,15 +24,36 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 find_package(Qt5Core REQUIRED)
 
-set(SOURCES WidgetSerialPort.ui WidgetSerialPort.cpp WidgetSerialPort.h 
-		SerialCOM.ui SerialCOM.cpp SerialCOM.h main.cpp icons.qrc)
+set(SRC_FILES
+		main.cpp
+		WidgetSerialPort.cpp
+		SerialCOM.cpp
+		)
 
-add_executable(SerialCOM ${SOURCES})
+set(HEADER_FILES
+		WidgetSerialPort.h
+		SerialCOM.h
+		)
+		
+set(UI_FILES
+		WidgetSerialPort.ui
+		SerialCOM.ui
+		)
+		
+set(QRC_FILES
+		icons.qrc
+		)
+
+
+add_executable(${PROJECT_NAME} ${SRC_FILES} ${HEADER_FILES} ${UI_FILES} ${QRC_FILES})
+
 
 add_definitions(-DQT_NO_VERSION_TAGGING)
 
-target_link_libraries(SerialCOM Qt5::Widgets)
+target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
 
-qt5_use_modules(SerialCOM Core SerialPort)
+qt5_use_modules(${PROJECT_NAME} Core SerialPort)
 
-include_directories(. .)
+include_directories(.)
+
+

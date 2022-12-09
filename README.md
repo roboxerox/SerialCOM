@@ -5,32 +5,33 @@ Qt based UI application to send or receive data over serial port on platform Uni
 ### Use the following commands to install the basic requirements for building Qt applications
 
 ### Debian/Ubuntu (apt-get)
+
 	sudo apt-get install build-essential libgl1-mesa-dev
+	
 For More Help [https://wiki.qt.io/Install_Qt_5_on_Ubuntu]
+
 ### Fedora/RHEL/CentOS (yum)
+
 	sudo yum groupinstall "C Development Tools and Libraries"
 	sudo yum install mesa-libGL-devel
+
 ### openSUSE (zypper)
+
 	sudo zypper install -t pattern devel_basis
 
 
 ### Step to compile with qt
-	1. Open QtCreator
-	2. Open Project -> select file (SerialCOM.pro)
-	3. Build and run
+
+- Open QtCreator
+- Open Project -> select file (SerialCOM.pro)
+- Build and run
 
 ### Step to compile with cmake/make
+
 	git clone https://github.com/roboxerox/SerialCOM.git
 	cd SerialCOM
 	mkdir build  && cd  build
 	cmake ..
-	make
-
-### Step to compile with qmake/make
-	git clone https://github.com/roboxerox/SerialCOM.git
-	cd SerialCOM
-	mkdir buildq  && cd  buildq
-	qmake ..
 	make
 
 

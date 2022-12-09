@@ -237,7 +237,7 @@ void WidgetSerialPort::on_pushButton_Send_clicked()
         else
         {
             QByteArray tmp; tmp.append(ui->lineEdit->text());
-            QByteArray hex = tmp.toHex(' ');
+            QByteArray hex = tmp.toHex();//tmp.toHex(' ');
             ui->plainTextEdit->appendHtml(QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")+
                                           "<font color=\"blue\"> SEND : "+QString::fromStdString(hex.toStdString())+"</font>");
         }
@@ -290,8 +290,8 @@ void WidgetSerialPort::sl_ReadData()
                                                "<font color=\"green\"> RECV : "+QString::fromStdString(data.toStdString())+"</font>");
         else
         {
-            QByteArray hex = data.toHex(' ');
-//            QByteArray hex = data.toHex();  // ICNEXUS
+//            QByteArray hex = data.toHex(' ');
+            QByteArray hex = data.toHex();  // ICNEXUS
             ui->plainTextEdit->appendHtml(QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")+
                                           "<font color=\"green\"> RECV : "+QString::fromStdString(hex.toStdString())+"</font>");
         }
