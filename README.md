@@ -1,4 +1,4 @@
-# SerialCOM ![](https://github.com/roboxerox/SerialCOM/blob/main/images/Connections.png)
+# ![](https://github.com/roboxerox/SerialCOM/blob/main/images/Connections.png) SerialCOM
 Qt based UI application to send or receive data over serial port on platform Unix/Linux.
 
 
