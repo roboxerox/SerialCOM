@@ -9,13 +9,12 @@
 
 #include <QWidget>
 #include <QSerialPort>
-#include <QDebug>
 #include <QTimer>
-#include <QDateTime>
 #include <QSerialPortInfo>
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QAbstractItemView>
+#include <common_header.h>
 
 
 namespace PORT_STATE {

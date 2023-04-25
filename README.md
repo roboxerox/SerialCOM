@@ -8,7 +8,7 @@ Qt based UI application to send or receive data over serial port on platform Uni
 
 	sudo apt-get install build-essential libgl1-mesa-dev
 	
-For More Help [https://wiki.qt.io/Install_Qt_5_on_Ubuntu]
+For More [Help](https://wiki.qt.io/Install_Qt_5_on_Ubuntu)
 
 ### Fedora/RHEL/CentOS (yum)
 

@@ -34,7 +34,8 @@ SOURCES += \
 
 HEADERS += \
         SerialCOM.h \
-    WidgetSerialPort.h
+    WidgetSerialPort.h \
+    common_header.h
 
 FORMS += \
         SerialCOM.ui \

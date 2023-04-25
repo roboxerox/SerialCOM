@@ -10,12 +10,6 @@
 #include <QMainWindow>
 #include <WidgetSerialPort.h>
 
-#define VER_MAJOR               QString("0")
-#define VER_MINOR               QString("2")
-#define VER_BUILD               QString("1e")
-#define STR_PRODUCTNAME         QString("SerialCOM")
-#define STR_SOFTWARE_VERSION    QString(VER_MAJOR+"."+VER_MINOR+"."+VER_BUILD)
-#define STR_FILEDESCRIPTION     QString("Serial port communication")
 
 namespace Ui {
 class SerialCOM;

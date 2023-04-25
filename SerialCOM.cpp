@@ -42,10 +42,9 @@ SerialCOM::~SerialCOM()
  */
 void SerialCOM::sl_AboutUs(bool ab)
 {
-    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
-           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__;
+    qDebug().noquote()<<DEBUG_PREFIX(__FILE__,__LINE__,__FUNCTION__);
     Q_UNUSED(ab)
-    QMessageBox *cAbout = new QMessageBox;
+    QMessageBox *cAbout = new QMessageBox(this);
     cAbout->setIconPixmap(QPixmap(":images/wing_com.png").scaled(QSize(60,40)));
     cAbout->setStyleSheet("QMessageBox {"
                          "color: rgb(255, 255, 255);"
@@ -64,8 +63,7 @@ void SerialCOM::sl_AboutUs(bool ab)
  */
 void SerialCOM::sl_Close(bool cl)
 {
-    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
-           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__;
+    qDebug().noquote()<<DEBUG_PREFIX(__FILE__,__LINE__,__FUNCTION__);
     Q_UNUSED(cl)
     close();
 }
@@ -77,8 +75,7 @@ void SerialCOM::sl_Close(bool cl)
  */
 void SerialCOM::sl_OpenNew(bool nStat)
 {
-    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
-           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__;
+    qDebug().noquote()<<DEBUG_PREFIX(__FILE__,__LINE__,__FUNCTION__);
     Q_UNUSED(nStat)
 
     int num = 0;
@@ -103,8 +100,7 @@ void SerialCOM::sl_OpenNew(bool nStat)
 
 void SerialCOM::sl_CloseTab(int index)
 {
-    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
-           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__;
+    qDebug().noquote()<<DEBUG_PREFIX(__FILE__,__LINE__,__FUNCTION__);
     if(index>0)
     {
         WidgetSerialPort *uiSerial  =  qobject_cast<WidgetSerialPort*>(ui->tabWidget->widget(index));
@@ -121,8 +117,7 @@ void SerialCOM::sl_CloseTab(int index)
  */
 void SerialCOM::sl_ChangeTabStatus(WidgetSerialPort *uiSerialPort, int state)
 {
-    qDebug()<<QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss") << "File :"<<__FILE__
-           <<"Line :"<<__LINE__<<"Func :"<<__FUNCTION__;
+    qDebug().noquote()<<DEBUG_PREFIX(__FILE__,__LINE__,__FUNCTION__);
     switch (state) {
     case PORT_STATE::OPEN:
         ui->tabWidget->setTabIcon(ui->tabWidget->indexOf(uiSerialPort),QIcon(":/images/connected.png"));
