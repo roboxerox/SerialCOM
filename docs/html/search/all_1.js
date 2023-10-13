@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['eventfilter_3',['eventFilter',['../class_widget_serial_port.html#a5484e76cc029919d7c876108d7d368e2',1,'WidgetSerialPort']]]
+  ['debug_5fprefix_4',['DEBUG_PREFIX',['../common__header_8h.html#a9a1a61ebfe55685ad885a011e9fd1031',1,'common_header.h']]]
 ];

@@ -1,0 +1,8 @@
+<map id="common_header.h" name="common_header.h">
+<area shape="rect" id="node1" title="This header has all common includes, Hash defines and enums." alt="" coords="109,5,237,32"/>
+<area shape="rect" id="node2" href="$_widget_serial_port_8h.html" title="This is header of WidgetSerialPort class." alt="" coords="108,80,239,107"/>
+<area shape="rect" id="node3" href="$_serial_c_o_m_8h.html" title="This is header of SerialCOM class." alt="" coords="53,155,150,181"/>
+<area shape="rect" id="node6" href="$_widget_serial_port_8cpp.html" title="This is WidgetSerialPort QWidget class. It is handling QSerialPort with data flow (Open/close,..." alt="" coords="174,155,319,181"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="This is main class." alt="" coords="5,229,80,256"/>
+<area shape="rect" id="node5" href="$_serial_c_o_m_8cpp.html" title="This is SerialCOM main UI class. It is handling WidgetSerialPort widget." alt="" coords="105,229,215,256"/>
+</map>
