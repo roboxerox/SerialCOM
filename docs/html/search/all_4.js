@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['on_5fpushbutton_5fclear_5fclicked_20',['on_pushButton_Clear_clicked',['../class_widget_serial_port.html#a68a880e17b111e9617db66aeb4790347',1,'WidgetSerialPort']]],
-  ['on_5fpushbutton_5fopen_5fclicked_21',['on_pushButton_Open_clicked',['../class_widget_serial_port.html#a6a5d23d99b512b340ac5161331d84ff0',1,'WidgetSerialPort']]],
-  ['on_5fpushbutton_5fsave_5fclicked_22',['on_pushButton_Save_clicked',['../class_widget_serial_port.html#a8762c467a8cf78c35e72a5e4727f4db3',1,'WidgetSerialPort']]],
-  ['on_5fpushbutton_5fsend_5fclicked_23',['on_pushButton_Send_clicked',['../class_widget_serial_port.html#a40b831a285420116fd90477db58a48ff',1,'WidgetSerialPort']]],
-  ['open_24',['OPEN',['../namespace_p_o_r_t___s_t_a_t_e.html#aa204830cb93b91ba1b6b0db25fce1477a9a1783f5e71e5ca4e58a8f1ce5075d9e',1,'PORT_STATE']]]
+  ['m_5fget_5fuidatabits_14',['m_Get_uiDataBits',['../class_widget_serial_port.html#a0f8b88665274068dc42c94a8a010be8e',1,'WidgetSerialPort']]],
+  ['m_5fget_5fuiflowcontrol_15',['m_Get_uiFlowControl',['../class_widget_serial_port.html#a1a2f6c23ce0e8efdfc8cd8558e545bb7',1,'WidgetSerialPort']]],
+  ['m_5fget_5fuiopenmode_16',['m_Get_uiOpenMode',['../class_widget_serial_port.html#a22fb2444b66572dc48fef8066abd19ce',1,'WidgetSerialPort']]],
+  ['m_5fget_5fuiparity_17',['m_Get_uiParity',['../class_widget_serial_port.html#a5e48b7205747e485ad39782f98dfb559',1,'WidgetSerialPort']]],
+  ['m_5fget_5fuistopbits_18',['m_Get_uiStopBits',['../class_widget_serial_port.html#ac7a1cea12988d7518862527b03c3bd8a',1,'WidgetSerialPort']]],
+  ['m_5fgettabname_19',['m_GetTabName',['../class_widget_serial_port.html#a191814737b61763b6c4b317326024b93',1,'WidgetSerialPort']]],
+  ['main_20',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['main_2ecpp_21',['main.cpp',['../main_8cpp.html',1,'']]]
 ];

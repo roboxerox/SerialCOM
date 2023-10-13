@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['ui_52',['Ui',['../namespace_ui.html',1,'Ui'],['../class_serial_c_o_m.html#a5ceb16ffdc84e3c602053e444adb8ab0',1,'SerialCOM::ui()'],['../class_widget_serial_port.html#abdd6fcb76f07c55f62c3a7baa2637a2a',1,'WidgetSerialPort::ui()']]],
-  ['unknown_53',['UNKNOWN',['../namespace_p_o_r_t___s_t_a_t_e.html#aa204830cb93b91ba1b6b0db25fce1477a5279d22bb17d8d2c67fd7117b8c791d9',1,'PORT_STATE']]]
+  ['tabnum_50',['TabNum',['../class_widget_serial_port.html#a0e8ba5cdc343e01741517347c0cbab5d',1,'WidgetSerialPort']]],
+  ['timerhealth_51',['timerHealth',['../class_widget_serial_port.html#a1636561c8e1d7ac83127ada0aa0e1fcd',1,'WidgetSerialPort']]],
+  ['timerserialportlist_52',['timerSerialPortList',['../class_widget_serial_port.html#a202570a8c426fdf12b6e02a88af82a49',1,'WidgetSerialPort']]]
 ];

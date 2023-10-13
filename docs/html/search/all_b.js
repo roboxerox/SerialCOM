@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['widgetserialport_57',['WidgetSerialPort',['../class_widget_serial_port.html',1,'WidgetSerialPort'],['../class_widget_serial_port.html#a3bd03e83f36b74e5bf1e92c58b9b04ff',1,'WidgetSerialPort::WidgetSerialPort()']]],
-  ['widgetserialport_2ecpp_58',['WidgetSerialPort.cpp',['../_widget_serial_port_8cpp.html',1,'']]],
-  ['widgetserialport_2eh_59',['WidgetSerialPort.h',['../_widget_serial_port_8h.html',1,'']]]
+  ['ver_5fbuild_55',['VER_BUILD',['../common__header_8h.html#a7ce3a6824adeecbb4481086e2ba00fb8',1,'common_header.h']]],
+  ['ver_5fmajor_56',['VER_MAJOR',['../common__header_8h.html#ae9b0873c1004a01651f733d556db118c',1,'common_header.h']]],
+  ['ver_5fminor_57',['VER_MINOR',['../common__header_8h.html#ad78650efa42849c5f86d372f11f26403',1,'common_header.h']]]
 ];

@@ -1,25 +1,4 @@
 var searchData=
 [
-  ['serialcom_27',['SerialCOM',['../index.html',1,'']]],
-  ['serialcom_28',['SerialCOM',['../class_serial_c_o_m.html',1,'SerialCOM'],['../class_serial_c_o_m.html#a86353777ce5a85c1c16ffb93283eb83c',1,'SerialCOM::SerialCOM()']]],
-  ['serialcom_2ecpp_29',['SerialCOM.cpp',['../_serial_c_o_m_8cpp.html',1,'']]],
-  ['serialcom_2eh_30',['SerialCOM.h',['../_serial_c_o_m_8h.html',1,'']]],
-  ['serialport_5frxtx_31',['SerialPort_RxTx',['../class_widget_serial_port.html#ac1786a9c8f9a3b21e557a934c7442bdb',1,'WidgetSerialPort']]],
-  ['si_5fchangestatus_32',['si_ChangeStatus',['../class_widget_serial_port.html#a09b954784029d0b5f33c59ff5cb0224b',1,'WidgetSerialPort']]],
-  ['sl_5faboutus_33',['sl_AboutUs',['../class_serial_c_o_m.html#ac18b3baded01ddc5a066bdf51898244f',1,'SerialCOM']]],
-  ['sl_5fchangetabstatus_34',['sl_ChangeTabStatus',['../class_serial_c_o_m.html#ac373bdbd11d2c6b7084e49fc121b0437',1,'SerialCOM']]],
-  ['sl_5fclose_35',['sl_Close',['../class_serial_c_o_m.html#a74b5f736b595eefda24f61b48cf501e2',1,'SerialCOM']]],
-  ['sl_5fclosetab_36',['sl_CloseTab',['../class_serial_c_o_m.html#a2a3fe186ed8936ca24c8c3e053867496',1,'SerialCOM']]],
-  ['sl_5fconnect_37',['sl_Connect',['../class_widget_serial_port.html#aa819478723ce0c84baad61c854407608',1,'WidgetSerialPort']]],
-  ['sl_5fopennew_38',['sl_OpenNew',['../class_serial_c_o_m.html#ad00addaec34a5ff8999954f26dbba2c3',1,'SerialCOM']]],
-  ['sl_5freaddata_39',['sl_ReadData',['../class_widget_serial_port.html#a490cf2a53dc19ec55a6c202ea462bffb',1,'WidgetSerialPort']]],
-  ['sl_5freadoutputerror_40',['sl_ReadOutputError',['../class_widget_serial_port.html#af6e6684b4789dc03a17de9daab23cf3f',1,'WidgetSerialPort']]],
-  ['sl_5fupdateserialportlist_41',['sl_UpdateSerialPortList',['../class_widget_serial_port.html#a1fc62b642e6518df0a9210acad15c388',1,'WidgetSerialPort']]],
-  ['sp_5fwidgets_42',['sp_widgets',['../class_serial_c_o_m.html#a76bf3d4e45892db6236525b378ecafe2',1,'SerialCOM']]],
-  ['sportlist_43',['sPortList',['../class_widget_serial_port.html#ac05afce4807d6be25f8912ae3eb9faf7',1,'WidgetSerialPort']]],
-  ['str_5ffiledescription_44',['STR_FILEDESCRIPTION',['../_serial_c_o_m_8h.html#a8a53fd214c821ef4916eacd5853d8c12',1,'SerialCOM.h']]],
-  ['str_5fproductname_45',['STR_PRODUCTNAME',['../_serial_c_o_m_8h.html#a44ebd40f131e92c9e542741cf475c944',1,'SerialCOM.h']]],
-  ['str_5fsoftware_5fversion_46',['STR_SOFTWARE_VERSION',['../_serial_c_o_m_8h.html#a89f38532e2c70a18c4840bac5d5756ef',1,'SerialCOM.h']]],
-  ['strportname_47',['strPortName',['../class_widget_serial_port.html#a4fc40dc98345035f3b95e0041acb14dc',1,'WidgetSerialPort']]],
-  ['strtabname_48',['strTabName',['../class_widget_serial_port.html#a5f6a6426f535666117ec9bdd14584609',1,'WidgetSerialPort']]]
+  ['readme_2emd_28',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]]
 ];

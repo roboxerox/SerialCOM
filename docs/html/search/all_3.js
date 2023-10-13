@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['m_5fget_5fuidatabits_12',['m_Get_uiDataBits',['../class_widget_serial_port.html#a0f8b88665274068dc42c94a8a010be8e',1,'WidgetSerialPort']]],
-  ['m_5fget_5fuiflowcontrol_13',['m_Get_uiFlowControl',['../class_widget_serial_port.html#a1a2f6c23ce0e8efdfc8cd8558e545bb7',1,'WidgetSerialPort']]],
-  ['m_5fget_5fuiopenmode_14',['m_Get_uiOpenMode',['../class_widget_serial_port.html#a22fb2444b66572dc48fef8066abd19ce',1,'WidgetSerialPort']]],
-  ['m_5fget_5fuiparity_15',['m_Get_uiParity',['../class_widget_serial_port.html#a5e48b7205747e485ad39782f98dfb559',1,'WidgetSerialPort']]],
-  ['m_5fget_5fuistopbits_16',['m_Get_uiStopBits',['../class_widget_serial_port.html#ac7a1cea12988d7518862527b03c3bd8a',1,'WidgetSerialPort']]],
-  ['m_5fgettabname_17',['m_GetTabName',['../class_widget_serial_port.html#a191814737b61763b6c4b317326024b93',1,'WidgetSerialPort']]],
-  ['main_18',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['main_2ecpp_19',['main.cpp',['../main_8cpp.html',1,'']]]
+  ['ibaudrate_6',['iBaudrate',['../class_widget_serial_port.html#aac8edd82fd5953ec5b764bd8ab89accf',1,'WidgetSerialPort']]],
+  ['idatabits_7',['iDataBits',['../class_widget_serial_port.html#a55a50958e1fcfbb740c9fbeba739532b',1,'WidgetSerialPort']]],
+  ['iflowcontrol_8',['iFlowControl',['../class_widget_serial_port.html#a93bdc35433a14e0273fa2503bdd4d681',1,'WidgetSerialPort']]],
+  ['index_5fstat_9',['index_stat',['../class_serial_c_o_m.html#a8095a55dd8d299c97bb451f9b4b5281f',1,'SerialCOM']]],
+  ['iopenmode_10',['iOpenMode',['../class_widget_serial_port.html#acf195147c810b8f35634fb4c08de9ff1',1,'WidgetSerialPort']]],
+  ['iparity_11',['iParity',['../class_widget_serial_port.html#add235c15f31aad871ababe39a801028b',1,'WidgetSerialPort']]],
+  ['isserialportopen_12',['isSerialPortOpen',['../class_widget_serial_port.html#a89d137db60dbf42da57d16bc5dd4e2ef',1,'WidgetSerialPort']]],
+  ['istopbits_13',['iStopBits',['../class_widget_serial_port.html#a0edb32d0e21848e326df2c035a5fcd2f',1,'WidgetSerialPort']]]
 ];

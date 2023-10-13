@@ -13,7 +13,7 @@
   <property name="font">
    <font>
     <family>Arial</family>
-    <pointsize>11</pointsize>
+    <pointsize>12</pointsize>
    </font>
   </property>
   <property name="windowTitle">
@@ -58,6 +58,11 @@
     </property>
     <item>
      <widget class="QTabWidget" name="tabWidget">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
        <string notr="true">QTabWidget::pane {
     border: 1px solid black;
@@ -112,12 +117,13 @@ QTabBar::tab:!selected:hover {
      <x>0</x>
      <y>0</y>
      <width>880</width>
-     <height>23</height>
+     <height>24</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Arial</family>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <widget class="QMenu" name="menuHelp">
@@ -132,6 +138,11 @@ QTabBar::tab:!selected:hover {
     <addaction name="actionAbout_Us"/>
    </widget>
    <widget class="QMenu" name="menuNew">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>New</string>
     </property>
@@ -160,6 +171,7 @@ QTabBar::tab:!selected:hover {
    <property name="font">
     <font>
      <family>Arial</family>
+     <pointsize>11</pointsize>
     </font>
    </property>
   </action>

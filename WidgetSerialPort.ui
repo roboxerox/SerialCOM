@@ -55,7 +55,7 @@
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>11</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="text">
@@ -68,7 +68,7 @@
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>11</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="text">
@@ -87,14 +87,14 @@
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>11</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">QComboBox{
 	combobox-popup: 0;
 	background-color: rgb(119,136,153);
-	color: rgb(240, 255, 255);
+	color: rgb(255, 255, 255);
 }
 </string>
         </property>
@@ -134,7 +134,7 @@
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>11</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="text">
@@ -153,14 +153,14 @@
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>11</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">QComboBox{
 	combobox-popup: 0;
 	background-color: rgb(119,136,153);
-	color: rgb(240, 255, 255);
+	color: rgb(255, 255, 255);
 }</string>
         </property>
         <property name="maxVisibleItems">
@@ -191,7 +191,7 @@
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>11</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="text">
@@ -204,7 +204,7 @@
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>11</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="text">
@@ -223,14 +223,14 @@
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>11</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">QComboBox{
 	combobox-popup: 0;
 	background-color: rgb(119,136,153);
-	color: rgb(240, 255, 255);
+	color: rgb(255, 255, 255);
 }</string>
         </property>
         <property name="maxVisibleItems">
@@ -246,7 +246,7 @@
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>11</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="text">
@@ -265,14 +265,14 @@
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>11</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">QComboBox{
 	combobox-popup: 0;
 	background-color: rgb(119,136,153);
-	color: rgb(240, 255, 255);
+	color: rgb(255, 255, 255);
 }</string>
         </property>
         <property name="maxVisibleItems">
@@ -309,14 +309,14 @@
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>11</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">QComboBox{
 	combobox-popup: 0;
 	background-color: rgb(119,136,153);
-	color: rgb(240, 255, 255);
+	color: rgb(255, 255, 255);
 }</string>
         </property>
         <property name="maxVisibleItems">
@@ -363,14 +363,14 @@
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>11</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">QComboBox{
 	combobox-popup: 0;
 	background-color: rgb(119,136,153);
-	color: rgb(240, 255, 255);
+	color: rgb(255, 255, 255);
 }</string>
         </property>
         <property name="currentIndex">
@@ -435,14 +435,14 @@
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>11</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">QComboBox{
 	combobox-popup: 0;
 	background-color: rgb(119,136,153);
-	color: rgb(240, 255, 255);
+	color: rgb(255, 255, 255);
 }</string>
         </property>
         <property name="maxVisibleItems">
@@ -473,7 +473,7 @@
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>11</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="text">
@@ -492,12 +492,12 @@
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>11</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(119,136,153);
-color: rgb(240, 255, 255);</string>
+color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
          <string>Open</string>
@@ -512,7 +512,7 @@ color: rgb(240, 255, 255);</string>
      <property name="font">
       <font>
        <family>Arial</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="readOnly">
@@ -533,12 +533,12 @@ color: rgb(240, 255, 255);</string>
        <property name="font">
         <font>
          <family>Arial</family>
-         <pointsize>11</pointsize>
+         <pointsize>12</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(119,136,153);
-color: rgb(240, 255, 255);</string>
+color: rgb(255, 255, 255);</string>
        </property>
        <property name="text">
         <string>Clear</string>
@@ -550,7 +550,7 @@ color: rgb(240, 255, 255);</string>
        <property name="font">
         <font>
          <family>Arial</family>
-         <pointsize>11</pointsize>
+         <pointsize>12</pointsize>
         </font>
        </property>
        <property name="text">
@@ -569,12 +569,12 @@ color: rgb(240, 255, 255);</string>
        <property name="font">
         <font>
          <family>Arial</family>
-         <pointsize>11</pointsize>
+         <pointsize>12</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(119,136,153);
-color: rgb(240, 255, 255);</string>
+color: rgb(255, 255, 255);</string>
        </property>
        <property name="text">
         <string>SEND</string>
@@ -586,7 +586,7 @@ color: rgb(240, 255, 255);</string>
        <property name="font">
         <font>
          <family>Arial</family>
-         <pointsize>11</pointsize>
+         <pointsize>12</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -606,11 +606,12 @@ color: rgb(240, 255, 255);</string>
        <property name="font">
         <font>
          <family>Arial</family>
+         <pointsize>12</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(119,136,153);
-color: rgb(240, 255, 255);</string>
+color: rgb(255, 255, 255);</string>
        </property>
        <property name="text">
         <string>Save</string>
